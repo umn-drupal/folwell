@@ -1,0 +1,10 @@
+favicon:
+  use_default: TRUE
+campus_select: 'umnhf-campus-tc'
+dtd_select: 'dtd'
+myu_text: 'sfs'
+campus_links: 'no-links'
+header_color: 'umnhf-background-maroon'
+mobile_search: 'dropdown'
+privacy_link: 'https://privacy.umn.edu'
+footer_date: 0
