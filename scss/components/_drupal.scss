@@ -1,0 +1,24 @@
+/* @file
+ * Preserve Drupal defaults that are losing out
+ * in specificity to Folwell theme components
+ */
+
+// General link styles conflicting with toolbar links.
+#toolbar-administration a {
+  border: none;
+}
+
+#toolbar-item-administration-tray {
+  &.toolbar-tray a {
+    color: #565656;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      color: #000;
+      text-decoration: underline;  
+    }
+  }
+}

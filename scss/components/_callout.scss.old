@@ -1,0 +1,124 @@
+// Callouts: Folwell Theme Component
+$callout-break: max-width 50em;
+
+// Base Callout Content
+.callout,
+.callout-overlay,
+.callout-horizontal {
+  h5,
+  h4,
+  h3,
+  h2,
+  h1 {
+    a {
+      border-bottom: 0;
+    }
+  }
+
+  h6,
+  h5,
+  h4,
+  h3,
+  h2,
+  h1 {
+    &:first-child {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.callout {
+  padding: 1.25em;
+  margin-bottom: 1em;
+
+  &:first-child {
+    margin-top: 30px;
+
+    @include breakpoint($callout-break) {
+      margin-top: 0;
+    }
+  }
+}
+
+.callout-horizontal {
+  display: flex;
+  background: $gold-light;
+
+  &>div {
+    flex:1;
+  }
+}
+
+.callout-content {
+  padding: 1.25em;
+}
+
+.callout-border-all {
+  border: $accent-border;
+}
+
+.callout-border-top {
+  border-top: $accent-border;
+}
+
+.callout-border-left {
+  border-left: $accent-border;
+}
+
+.callout-background {
+  background-color: $gray-lighter;
+}
+
+/* Specific callout overlay styles */
+.callout-overlay {
+  padding: 1.1em;
+
+  &.display-100 {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &.align-right {
+    position: absolute;
+    right: 2em;
+    top: 2em;
+  }
+
+  &.align-left {
+    position: absolute;
+    left: 2em;
+    top: 2em;
+  }
+
+  @include breakpoint($callout-break) {
+    &.display-100,
+    &.align-right,
+    &.align-left,
+    &.bg-gold-light {
+      position: relative;
+      top: 0;
+      width:100% !important;
+      left: 0;
+      margin-bottom: 1em !important;  
+    }
+  }
+}
+
+.callout-image {
+  img {
+    width: 100%;
+  }
+
+  & + .callout {
+    margin-top: 0;
+  }
+}

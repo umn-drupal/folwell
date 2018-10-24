@@ -1,0 +1,66 @@
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 1.111em;
+
+  li {
+    padding: .15em;
+
+    @include breakpoint($large-screen) {
+      padding: .25em;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 1.25em;
+  }
+}
+
+p+ul {
+  margin-top: -1.1em;
+}
+
+main,
+[role=main] {
+  ul {
+    overflow: hidden;
+
+    ul {
+      overflow: visible;
+    }
+  }
+}
+
+dl {
+  margin: 0;
+
+  dt {
+    font-weight: 600;
+    margin: 0;
+  }
+
+  dd {
+    margin: 0 0 0.5em 0;
+  }
+}
+
+.comma-separated-list {
+  list-style: none;
+  display: inline-block;
+  @include margin(null 0);
+  @include padding(null 0);
+
+  li {
+    display: inline-block;
+    padding: 0;
+  
+    &::after {
+      content: ',\00a0';
+    }
+  
+    &:last-child::after {
+      content: '';
+    }
+  }
+}

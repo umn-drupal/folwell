@@ -1,0 +1,75 @@
+// Media: Folwell Theme Component
+
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+figcaption,
+.txt-caption,
+cite {
+  font-size: .85em;
+  color: $gray-medium;
+  font-style: italic;
+  margin: 1.2em 1.2em 1.7em 0;
+}
+
+caption {
+  font-size: .85em;
+  color: $gray-medium;
+  font-style: italic;
+  margin: 0 1.2em 1em 0;
+  text-align: left;
+}
+
+.photo-credit {
+  display: block;
+  font-size: .7em;
+  color: $gray-medium;
+  margin: .6em 0 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.img-circle {
+  width: 17.45%;
+  float: left;
+  clear: left;
+  margin-right: 1em;
+
+  & img {
+    border-radius: 50%;
+  }
+}
+
+@include breakpoint(max-width $medium-screen) {
+  .display-100,
+  .display-50,
+  .display-33,
+  .display-20,
+  .img-circle,
+  .align-left,
+  .align-right {
+    width:auto !important;
+    margin: 0 !important;
+    float: none;
+  }
+
+  .img-circle img {
+    border-radius: 50%;
+    margin: auto;
+  }
+}
+
+#hero-video {
+  width: 100%;
+}
+
+.hero-video-container {
+    position: relative;
+}

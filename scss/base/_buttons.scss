@@ -1,0 +1,106 @@
+.btn,
+#{$all-buttons} {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1.25em;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  padding: 1em;
+  text-decoration: none;
+  transition: background-color $base-duration $base-timing;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.bg-maroon {
+    color: $base-background-color;
+    @include standard-border($maroon-light, bottom);
+
+    &:hover {
+      background-color: $maroon-light !important;
+      color: $base-background-color;
+    }
+  }
+
+  &.btn-give {
+    color: $base-background-color !important;
+    background-color: $maroon-light;
+    border-bottom-color: $maroon-light;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 2px;
+      left: 2px;
+      right: 2px;
+      bottom: 2px;
+      border: 1px solid $gold;
+    }
+
+    &:hover {
+      background-color: $maroon !important;
+      color: $base-background-color;
+    }
+  }
+
+  &.bg-maroon,
+  &.btn-give {
+    &:focus {
+      background-color: $maroon;
+      color: $gold;
+    }
+
+    &:active {
+      background-color: $maroon-dark;
+      color: $gold;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: $maroon-dark;
+  }
+}
+
+p > .btn {
+  margin-bottom: 0;
+}
+p > .btn-give {
+  margin-bottom: 1em;
+}
+
+.btn-small {
+  padding: 0.56em 1.39em;
+}
+
+.btn-outline,
+.btn-outline:link {
+  background-color: $base-background-color;
+  border: 1pt solid $maroon;
+  color: $gray-darker;
+
+  &:hover {
+    background-color: transparentize($gray-darker, .85);
+  }
+}
+
+.btn-arrow:after,
+.btn-arrow:link:after {
+  font-family: 'FontAwesome';
+  font-size: .8em;
+  padding-left: 10px;
+  content: "\f054";
+}
+
+.btn-full {
+  display: block;
+  width: 100%;
+}

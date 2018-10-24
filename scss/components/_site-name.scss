@@ -1,0 +1,83 @@
+//Site name: Folwell Theme Component
+.site-header__unit-sitename {
+  background: $white;
+  line-height: 100%;
+  max-width: 1200px;  
+  padding: 1em;
+  z-index: 500;
+
+  h1, .h1 {
+    font-size: 1.625em;
+    line-height: 2.19375;
+
+    @include breakpoint($large-screen) {
+      font-size: 1.444444444em;
+    }
+  }
+
+  .sitename {
+    line-height: 0;
+
+    @include breakpoint($small-screen) {
+      line-height: 1.85625;
+      margin: 0 0 2px 0;
+    }
+
+    @include breakpoint($large-screen) {
+      line-height: 1.65;
+    }
+
+    a {
+      color: $maroon;
+      font-size: $base-font-size !important;
+      line-height: $heading-line-height !important;
+      font-weight: 600;
+  
+      &:link {
+        color: $maroon;
+      }
+  
+      &:hover {
+        background: transparent;
+      }
+  
+      @include breakpoint($small-screen) {
+        font-size: 1.625em;
+      }
+  
+      @include breakpoint($large-screen) {
+        font-size: 1.444444444em;
+      }
+    }
+  }
+
+  .parentunit,
+  .parentunit a,
+  .subhead {
+    font-size: .8125em !important;
+    line-height: $heading-line-height !important;
+    color: $gray-medium;
+    margin: 0 0 2px 0;
+    border: none;
+    transition: none;
+
+    @include breakpoint($medium-screen) {
+      font-size: $base-mobile-font-size;
+      line-height: $heading-line-height;
+  
+      &.two-lines {
+        color: $maroon;
+      }
+    }
+  }
+
+  .parentunit a:hover {
+    @include standard-border($gray-darker);
+    background: $gray-lighter;
+  }
+}
+
+p.subhead,
+p.parentunit {
+  margin-top: 0;
+}

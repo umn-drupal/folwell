@@ -1,0 +1,606 @@
+//Superfish: Folwell Theme Component
+
+@mixin sf-hover($left: 0, $right: null, $top: null) {
+  li:hover > ul,
+  li.sfHover > ul {
+    left: $left;
+    @if $right != null {
+      right: $right;
+    } @else if $top != null {
+      top: $top;
+    }
+  }
+}
+
+.block-superfish {
+  width: 100%;
+}
+
+.sf-megamenu {
+  display:none;
+}
+
+div#fw-menu-wrapper {
+  width: 100%;
+  background: $gray-lighter;
+}
+
+div#main-nav,
+div#header-wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#block-mainnavigation-2 {
+  list-style: none;
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $gray-lighter;
+  z-index: 20 !important;
+}
+
+div#block-megamenu {
+  display: flex;
+  background: $gray-lighter;
+  z-index: 6 !important;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#block-megamenu ul.sf-menu li.sfHover>ul {
+    top: auto;
+    padding-bottom: .45em;
+}
+
+ul.sf-hidden>li {
+    display: none;
+}
+
+.sf-hidden {
+  background: transparent !important;
+  border: 0 none !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px !important;
+  margin:  !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  width: 1px !important;
+}
+
+ul.sf-menu {
+  line-height: 1.0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 497;
+
+  ul,
+  ol,
+  li,
+  a,
+  span,
+  div {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    float: left;
+    list-style: none;
+    position: relative;
+    z-index: 498;
+
+    a {
+      color: $gray-darker;
+    }
+  }
+
+  ul {
+    left: 0;
+    position: absolute;
+    top: -9999px;
+    width: 12em;
+    box-shadow: 3px 10px 10px -1px transparentize($sf-shadow, .3);
+
+    li {
+      top: 8px;    
+      width: 100%;
+
+      a {
+        padding: .8em 0 .8em 1.2em;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+a.sf-depth-1 {
+  text-align: center;
+
+  li &:hover {
+    background: $off-white;
+  }
+
+  li &:active {
+    color: $maroon;
+    border-bottom: none;
+  }
+
+  li.active-trail & {
+    background: transparentize($gray-light, .4);
+    color: $gray-darker;
+    font-weight: 700;  
+  }
+
+  li.active-trail &:hover{
+    color: $maroon;
+  }
+
+  li.sfHover & {
+    background-color: $gray-lighter;
+  }
+
+  &.menuparent.sf-with-ul.sf-clicked {
+    background: $off_white;
+    color: $maroon;
+  }
+}
+
+li.sf-depth-1 {
+  flex-grow: 1;
+  float: left;
+  margin-left: 0;
+  padding: 0;
+  position: relative;
+}
+
+@each $depth-class in (sf-depth-2, sf-depth-3, sf-depth-4) {
+  li a.#{$depth-class}.menuparent.sf-with-ul.sf-clicked {
+    background: $gray-light;
+  }
+
+  li a.is-active.#{$depth-class} {
+    color: $gray-darker;
+    font-weight: 400;
+    border-left: $accent-border;
+  }
+}
+
+ul.sf-menu {
+  a,
+  span.nolink {
+    background-color: $gray-lighter;
+    border-bottom: none;
+    color: $gray-darker;
+    display: block;
+    font-family: $base-font-family;
+    font-size: .888888889em;
+    font-weight: 400;
+    line-height: 1.35;
+    padding: 1.2em;
+    position: relative;
+    width: 100%;
+  }
+
+  a:hover {
+    border-bottom: none;
+  }
+
+  @each $depth-class in (sf-depth-2, sf-depth-3, sf-depth-4, sf-depth-5) {
+    li a.#{$depth-class} {
+      border-bottom: none;
+      background: $off_white;
+
+      &:hover {
+        border-bottom: none;
+        background: $gray-light;
+      }
+    }
+  }
+
+  li:hover,
+  li.sfHover {
+    z-index: 499;
+
+    & ul {
+      z-index: 499;
+    }
+
+    & > ul {
+      left: 0;
+      top: 2.8em;
+    }
+  }
+
+  li {
+    @include sf-hover(12em, null, 0);
+  }
+
+  &.menu,
+  &.menu ul,
+  &.menu li {
+    display: block;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;  
+    margin: 0;
+    padding: 0;
+  }
+
+  /**
+   * Arrows.
+   */
+  .sf-with-ul {
+    padding-right: 2.62em;
+  }
+
+  .sf-sub-indicator {
+    height: 12px;
+    line-height: 9999px;
+    margin-left: 1em;
+    opacity: 0.75;
+    overflow: hidden;
+    position: absolute;
+    right: 0.75em;
+    speak: none;
+    text-indent: -9999px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+
+    &:after {
+      content: "\f107";
+      font-family: 'FontAwesome';
+      left: 0;
+      line-height: 1;
+      position: absolute;
+      text-indent: 0;
+      top: 0;
+    }
+  }
+
+  ul .sf-sub-indicator:after {
+    content: "\f105";
+    // font-family: 'FontAwesome';
+    // left: 0;
+    // line-height: 1;
+    margin-top: -0.1em;
+    // position: absolute;
+    // text-indent: 0;
+    // top: 0;
+  }
+
+  a:focus > .sf-sub-indicator,
+  a:hover > .sf-sub-indicator,
+  a:active > .sf-sub-indicator,
+  li:hover > a > .sf-sub-indicator,
+  li.sfHover > a > .sf-sub-indicator,
+  span.nolink:hover > .sf-sub-indicator,
+  li:hover > span.nolink > .sf-sub-indicator,
+  li.sfHover > span.nolink > .sf-sub-indicator {
+    opacity: 1;
+  }
+
+  /**
+   * Shadow.
+   */
+  &.sf-horizontal.sf-shadow ul,
+  &.sf-vertical.sf-shadow ul,
+  &.sf-navbar.sf-shadow ul ul {
+    background: $off_white;
+    box-shadow: 0px 5px 5px 0 transparentize($sf-shadow, .6);
+    padding: 0 0 .4em;
+  }
+
+  &.sf-shadow ul.sf-shadow-off {
+    box-shadow: none;
+  }
+}
+
+/**
+ * Multi-column sub-menus.
+ * Supersubs.js can adjust column widths too and this is a fallback.
+ */
+ul.sf-menu li.sf-multicolumn-column {
+  display: inline;
+  float: left;
+  top:100%;
+}
+
+li.sf-clone-parent a.sf-depth-1.menuparent.sf-with-ul {
+  background: transparent;
+  color: $maroon;
+  font-weight: 700;
+  margin-bottom: .45em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+ol {
+  overflow: inherit;
+}
+
+.sf-multicolumn-column a.sf-depth-2.menuparent {
+  color: $maroon;
+  font-weight: 700;
+  margin-bottom: -.6em;
+}
+
+li.sf-multicolumn-wrapper.sf-depth-1.menuparent {
+  background: $off_white;
+  margin: 0;
+  padding: 0;
+  top: 100%;
+  width: 1180px;
+}
+
+@for $i from 1 through 10 {
+  ul.sf-menu li.sf-parent-children-#{$i} ul.sf-multicolumn {
+    width: $i * 12em;
+  }
+}
+
+@mixin sf-multi-col($col) {
+  $width: 100 / $col;
+  $z: $col;
+  @for $x from 1 through $col {
+    ul.sf-menu li.sf-multicolumn-column:nth-child(#{$x}):nth-last-child(#{$z}) {
+      width: $width;
+    }
+    $z: $z - 1;
+  }
+}
+
+@for $y from 2 through 10 {
+  @include sf-multi-col($y);
+}
+
+li.sf-clone-parent a.sf-depth-1 {
+  background: $off_white;
+  font-weight: 700;
+  margin-top: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+/**
+ * "Vertical" type.
+ */
+ul.sf-menu.sf-vertical {
+  width: 12em;
+
+  @include sf-hover(12em, null, 0);
+
+  li {
+    width: 100%;
+  }
+
+  .sf-sub-indicator:after {
+    content: "►";
+  }
+}
+
+/**
+ * "Navbar" type.
+ */
+ul.sf-menu.sf-navbar {
+  position: relative;
+
+  li {
+    position: static;
+    @include sf-hover(0, null, 2.5em);
+
+    li {
+      position: relative;
+      width: auto;
+      float: left;
+      @include sf-hover(12em, null, 0);
+    }
+
+    ul,
+    li li {
+      width: 100%;
+    }
+  }
+
+  > li.active-trail > ul {
+    left: 0;
+    top: 2.5em;
+  }
+
+  ul .sf-sub-indicator:after {
+    content: "▼";
+  }
+
+  ul ul .sf-sub-indicator:after {
+    content: "►";
+  }
+}
+
+/**
+ * sfSmallscreen.
+ */
+ul.sf-menu.sf-accordion {
+  display: none;
+  position: absolute;
+  float: left;
+  width: 100%;
+
+  ul,
+  li {
+    float: left;
+    width: 100%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  &.sf-expanded,
+  li.sf-expanded > ul {
+    left: auto !important;
+    position: relative;
+    top: auto !important;
+  }
+
+  .sf-sub-indicator:after {
+    content: "▼";
+  }
+
+  &.sf-accordion-with-buttons .sf-accordion-button:after {
+    content: "▼";
+    margin: 0 0 0 1em;
+  }
+
+  &.sf-accordion-with-buttons li.sf-expanded > .sf-accordion-button:after {
+    content: "▲";
+  }
+}
+
+/**
+ * RTL support.
+ */
+ul.sf-menu.rtl {
+  float: right;
+  @include sf-hover(auto, 0, null);
+
+  li {
+    float: right;
+    @include sf-hover(auto, 12em, null);
+
+    &.sf-multicolumn-column {
+      float: right;
+    }
+  }
+
+  ul {
+    left: auto;
+    right: 0;
+  }
+
+  .sf-sub-indicator {
+    left: 0.75em;
+    right: auto;
+  }
+
+  &.sf-horizontal ul .sf-sub-indicator:after {
+    content: "◄";
+  }
+
+  &.sf-horizontal.sf-shadow ul,
+  &.sf-vertical.sf-shadow ul,
+  &.sf-navbar.sf-shadow ul ul {
+    box-shadow: -2px 2px 10px transparentize($black, .5);
+  }
+
+  &.sf-vertical {
+    @include sf-hover(auto, 12em, null);
+
+    .sf-sub-indicator:after {
+      content: "◄";
+    }
+  }
+
+  &.sf-navbar {
+    li {
+      @include sf-hover(auto, 0, null);
+    }
+    li li {
+      float: right;
+      @include sf-hover(auto, 12em, null);
+    }
+
+    ul ul .sf-sub-indicator:after {
+      content: "◄";
+    }
+  }
+
+  &.sf-accordion.sf-expanded,
+  &.sf-accordion li.sf-expanded > ul {
+    right: auto !important;
+  }
+}
+
+//superfish vertical nav
+ul.menu.sf-menu.sf-vertical,
+ul.menu.sf-menu.sf-accordion,
+ul.menu.sf-menu.sf-accordion.vertical-nav{
+  z-index:1;
+  width:100%;
+  margin-bottom:1.5em;
+  //establish indentation
+  li{
+    padding:0;
+    top:0;
+    z-index:1;
+    >ul{
+      padding-left:1.2em;
+      z-index:1;
+      li{
+        top:0;
+        z-index:1;
+      }
+    }
+  }
+  li a{
+    background:none;
+    text-align:left;
+    font-size:18px;
+    border-bottom:solid 1px $gray-lighter;
+    padding:.25em;
+    color:$gray-darker;
+    font-weight:300;
+    &:hover{
+      background:$link-hover;
+    }
+  }
+  //add down arrow to li with submenus
+  li.menuparent >a{
+    &:before{
+      content: "\f107";
+      color:$gray-darker;
+      position:absolute;
+      right:1em;
+      font-family:'fontawesome';
+    }
+  }
+  //highlight expanded submenu
+  li.active-trail.menuparent.sf-expanded{
+    >a.is-active{
+      background:$gray-light;
+      font-weight:500;
+      border-bottom:solid 1px $maroon;
+      &:after{
+        left:0;
+        bottom:-13px;
+        position:absolute;
+      }
+    }
+  }
+}
+.active-vertical {
+  border-left: $accent-border;
+  font-weight: 600 !important;
+  color: $maroon-light !important;
+}
+nav#vertical-nav {
+    margin-top: 30px;
+}
+div#block-verticalnav {
+    width: 30%;
+    a.sf-depth-1.menuparent {
+        font-weight: 600;
+        color: #7a0019;
+    }
+}
+ul#superfish-vertical-nav-accordion {
+    background: #f9f7f6;
+    padding: 0 1em;
+}

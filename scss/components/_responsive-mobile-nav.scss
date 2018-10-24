@@ -1,0 +1,254 @@
+//Mobile nav: Folwell Theme Component
+#block-horizontalmenu{
+  display: none
+}
+
+#block-responsivemenumobileicon {
+  color: $gray-light;
+  float: right;
+  margin: -.3em .5em;
+
+  @include breakpoint(max-width 70em) {
+    background: $gray-lighter;
+    display: inline-block !important;
+    left: 8px;
+    position: relative;
+    width: 100%;
+    z-index: 10 !important;
+  }
+}
+
+button.mm-tabend {
+  background: transparent !important;
+
+  &:hover {
+    background: none !important;
+  }
+}
+
+a.mm-title {
+  font-weight: 600;
+
+  &:hover,
+  &:link:hover {
+    background: none;
+  }
+}
+
+.responsive-menu-toggle-icon {
+  background: $gray-lighter;
+  height: 37px;
+  left: 1em;
+  width: 85px;
+
+  span.label {
+    color: $black;
+  }
+
+  &:before,
+  &:after,
+  span.icon {
+    background: $black;
+  }
+}
+
+.mm-btn {
+  border-bottom: 1px solid transparent !important;
+  top: 25px;
+}
+
+.mm-menu {
+  &.mm-offcanvas {
+    width: 100%;
+  }
+
+  &.mm-theme-dark {
+    background: $gray-light
+  }
+}
+
+.mm-listview {
+  .is-active {
+    background: $off_white;
+  }
+
+  & > li {
+    background: $off_white;
+    color: $black;
+    border: none !important;
+
+    &:after,
+    .mm-next:before {
+      border: none !important;
+    }
+
+    & > a,
+    & > span {
+      white-space: pre-line;
+    }
+
+    .mm-next {
+      @include standard-border($placement: left);
+
+      .mm-menu.mm-theme-dark &:after {
+        border-color: $black;
+      }
+    }
+  }
+
+  .mm-next {
+    background: $off_white;
+    width: 50px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    @include standard-border($placement: left);
+  }
+
+  .mm-panels > .mm-panel > &:first-child,
+  .mm-panels > .mm-panel > .mm-navbar + & {
+    margin-top: 40px;
+  }
+
+}
+
+a.mm-next {
+  background-color: $maroon;
+
+  &:hover {
+    background-color: $maroon;
+
+    #off-canvas & {
+      background-color: $off_white;
+      @include standard-border;
+    }
+  }
+}
+
+#off-canvas{
+  top: 0;
+  z-index: 9999;
+
+  .mm-panels > .mm-panel.mm-hasnavbar {
+    background: $off_white;
+    padding-top: 40px;
+  }
+
+  .mm-menu.mm-theme-dark .mm-btn:after,
+  .mm-menu.mm-theme-dark .mm-btn:before {
+    border-color: $black !important;
+  }
+
+  a,
+  a:link {
+    @include standard-border;
+    color: $gray-darker;
+    font-size: 1em;
+  }
+}
+
+#toggle-icon {
+  a,
+  a:link {
+    border-bottom: 0px transparent $white !important;
+  }
+
+  .responsive-menu-toggle-icon {
+    background-color: $gray-lighter;
+    display: block;
+    height: 35px;
+    margin-top: 0;
+    position: relative;
+    width: 44px;
+    z-index: 4;
+  }
+
+  span.label {
+    font-size: 1.1em;
+    font-weight: 600;
+    left: 0;
+    text-transform: none;
+    top: .3em;
+
+    &:after {
+      content: "\f0c9";
+      font-family: "FontAwesome";
+      font-size: 1.1em;
+      margin-left: .4em;
+    }
+  }
+
+  span.icon {
+    display: none;
+    left: 45px;
+    top: 17px;
+    width: 25px;
+  }
+
+  &:before {
+    display: none;
+    left: 45px;
+    top: 10px;
+    width: 25px;
+  }
+
+  &:after {
+    display: none;
+    left: 45px;
+    top: 24px;
+    width: 25px;
+  }
+}
+
+.mm-navbar {
+  border-bottom: 1px solid $gray-light !important;
+
+  .mm-title {
+    height: 60px;
+    margin-top: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    @include padding(null 6px);
+  }
+
+  .mm-panel.mm-hasnavbar & {
+    display: block;
+    background: $gray-lighter;
+    background: $gold-header;
+    height: 100px;
+  }
+}
+
+img#close-icon {
+  height: 15px;
+  margin: 4px 4px 4px 9px;
+  width: 15px;
+}
+
+a#close-nav::after {
+  -webkit-text-stroke: .008em $gold-header;
+  content: "\f00d";
+  font-family: "FontAwesome";
+  font-size: 1.1em;
+  margin-right: 1em;
+}
+
+li a.is-active {
+  font-weight: 700;
+}
+
+.mm-next:after,
+.mm-prev:before {
+  border-left: 3px solid transparent;
+  border-top: 3px solid transparent;
+  content: '';
+}
+
+img#mobile-nav-m {
+  height: 45px;
+  @include margin(-90px auto null);
+}

@@ -1,0 +1,73 @@
+//Vertical nav: Folwell Theme Component
+
+//drupal default menus
+//found within the content region
+//usually a sidebar
+div#body-wrapper nav{
+  ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+    width:100%;
+    background: $off-white;
+    //establish indentation
+    li{
+      padding:0;
+      >ul{
+        padding-left:1.2em;
+      }
+    }
+    a{
+      //basic menu link styles
+      text-decoration:none;
+      display:block;
+      border-bottom:solid 1px $off-white;
+      padding:.5em;
+      color:$gray-darker;
+      position:relative;
+      font-size:.833em;
+      &:hover{
+        color:$maroon;
+        background:$gray-lighter;
+      }
+    }
+
+    //highlight expanded submenu
+    li._item-active-trail{
+      >a.is-active{
+        font-weight:600;
+      //  border-bottom:solid 1px $maroon;
+        color:$maroon;
+        &:after{
+          left:0;
+          bottom:-14px;
+          position:absolute;
+        }
+      }
+    }
+  }
+}
+div#body-wrapper{
+  div{
+    .sf-accordion-toggle{
+      >a{
+        background:transparent;
+        display:inline-block;
+        margin:.5em 0;
+        padding:.5em;
+        position:relative;
+        border:1px $maroon solid;
+        font-size:.85em;
+        font-weight:400;
+        &:hover{
+          background:$link-hover;
+        }
+        &:before{
+          content:'\f0c9';
+          font-family:fontawesome;
+          margin-right:.5em;
+        }
+      }
+    }
+  }
+}

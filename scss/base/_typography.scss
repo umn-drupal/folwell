@@ -1,0 +1,287 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-mobile-font-size;
+  font-weight: 400;
+  line-height: $base-mobile-line-height;
+  @include breakpoint($large-screen) {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $gray-darker;
+  font-family: $heading-font-family;
+  font-size: $base-font-size;
+  font-weight: 600;
+  line-height: $heading-line-height;
+  margin: 0 0 $small-spacing;
+  a,
+  a:link {
+    color: $gray-darker;
+    border-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: 2.25em;
+  margin: .833333333em 0 .555555556em;
+  @include breakpoint($large-screen) {
+    font-size: 2em;
+  }
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 700;
+  margin: 1.5625em 0 .78125em;
+  @include breakpoint($large-screen) {
+    font-size: 1.777777778em;
+  }
+
+  &:first-child {
+    margin: .876875em 0 .78125em;
+  }
+}
+
+h3 {
+  font-size: 1.5625em;
+  line-height: 1.512;
+  margin: 1.6em 0 1em;
+  @include breakpoint($large-screen) {
+    font-size: 1.388888889em;
+  }
+
+  &:first-child {
+    margin-top: .88em;
+  }
+
+  h2+& {
+    margin-top: 1.2em;
+  }
+}
+
+h4 {
+  font-size: 1.375em;
+  margin: 1.636363636em 0 .833333333em;
+  @include breakpoint($large-screen) {
+    font-size: 1.222222222em;
+  }
+
+  h3 + & {
+    margin-top: 1.136363636em;
+  }
+}
+
+h4,
+h5 {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+h5,
+h6,
+small {
+  font-size: 1.125em;
+  @include breakpoint($large-screen) {
+    font-size: 1em;
+  }
+}
+
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h5 {
+  line-height: 1.5;
+  margin: 1.666666667em 0 .833333333em;
+
+  h4+& {
+    margin-top: 1.388888889em;
+  }
+}
+
+h6,
+small {
+  line-height: $heading-line-height;
+  margin: 1.388888889em 0 0;
+}
+
+p,
+article {
+  margin: 0 0 1.333em;
+}
+
+h6 + p {
+  margin-top: 0;
+}
+
+.txt-intro,
+.txt-intro:link {
+  font-size: 1.22em;
+  line-height: $base-line-height;
+  margin-bottom: 1.33em;
+  color: $gray-medium;
+}
+
+@include breakpoint(320px 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4375em;
+
+    p + & {
+      margin-top: 1.086956522em;
+    }
+  }
+
+  h3 {
+    font-size: 1.3125em;
+    line-height: $heading-line-height;
+
+    p + & {
+      margin-top: 1.19047619em;
+    }
+  }
+
+  h4 {
+    font-size: 1.1875em;
+
+    p + & {
+      margin-top: 1.315789474em;
+    }
+  }
+
+  h5 {
+    font-size: 1.125em;
+    line-height: 1.275;
+
+    p + & {
+      margin-top: 1.388888889em;
+    }
+  }
+
+  h6,
+  small {
+    font-size: 1em;
+    font-weight: 700;
+  }
+
+  p + h6 {
+    margin-top: 1.5625em;
+  }
+
+  p {
+    margin-bottom: 1.25em;
+  }
+}
+
+a {
+  color: $maroon-light;
+  text-decoration: none;
+  transition: all $base-duration $base-timing;
+  @include standard-border($maroon-light);
+
+  &:link {
+    // color: $maroon-light;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $link-hover;
+  }
+
+  &:focus {
+    background-color: $gold-header;
+  }
+
+  &:visited {
+    color: $gray-dark;
+    @include standard-border($gray-dark);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background-color: $white;
+    @include standard-border;
+  }
+
+  &.emphasis {
+    color: $maroon;
+    text-decoration: none;
+    transition: all $base-duration $base-timing;
+    border-bottom: none;
+    font-weight: 600;
+    padding: .2em;
+
+    &::after {
+      font-family: 'FontAwesome';
+      font-size: .8em;
+      padding-left: .6em;
+      content: "\f054";
+      color: $gray-medium;  
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @include standard-border($maroon);
+    }
+
+    &:hover {
+      background-color: $link-hover;
+
+      &::after {
+        font-family: 'FontAwesome';
+        font-size: .8em;
+        padding-left: .6em;
+        content: "\f054";
+        color: $maroon;
+      }
+    }
+
+    &:focus {
+      background-color: $gold-header;
+    }
+
+    &:active {
+      background-color: $gray-light;
+    }
+  
+  }
+}
+
+a.link-nu,
+a.link-nu:link {
+  text-decoration: none;
+  transition: color 500ms ease-in-out;
+  border-bottom: none;
+}
+.link-nu a:link {
+  border-bottom: none;
+}
+
+hr {
+  @include standard-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
