@@ -1,0 +1,13 @@
+global-styling:
+  version: VERSION
+  css:
+    base:
+      css/folwell.css: {}
+global-scripts:
+  version: VERSION
+  js:
+    js/scripts.js: {}
+fonts:
+  css:
+    theme:
+      '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i': { type: external, minified: true }
