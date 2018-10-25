@@ -23,7 +23,7 @@
     "run-sequence": "^1.1.5"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/rimraf node_modules/**/*.info && gulp bitters-copy && gulp bitters-fix && gulp sass && gulp compress"
+    "postinstall": "node_modules/.bin/rimraf node_modules/**/*.info && gulp sass && gulp compress"
   },
   "dependencies": {
     "gulp-autoprefixer": "^6.0.0"
