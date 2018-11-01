@@ -1,0 +1,14 @@
+<header class="site-identity">
+    {% if parent_unit or first_line %}
+        <p class="prefix-name">
+            {% if parent_unit %}
+                {% if parent_url %}<a href="{{ parent_url }}">{% endif %}
+                {{ parent_unit }}
+                {% if parent_url %}</a>{% endif %}
+            {% elseif first_line %}
+                <span class="two-lines">{{ first_line }}</span>
+            {% endif %}
+        </p>
+    {% endif %}
+    <h1 class="sitename"><a href="{{ path('<front>') }}">{{ site_name }}</a></h1>
+</header>
