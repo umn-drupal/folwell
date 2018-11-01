@@ -86,6 +86,12 @@ function folwell_preprocess_html(&$variables) {
   $block_output = $search_block_instance->build();
   $variables['search_block'] = $block_output;
 
+  // Pass site identity settings to html.html.twig
+  $variables['site_name'] = theme_get_setting('site_name') ? theme_get_setting('site_name') : \Drupal::config('system.site')->get('name');
+  $variables['first_line'] = theme_get_setting('first_line');
+  $variables['parent_unit'] = theme_get_setting('parent_unit');
+  $variables['parent_url'] = theme_get_setting('parent_url');
+
 }
 
 /**

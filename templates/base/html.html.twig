@@ -62,19 +62,20 @@
         {{ 'Skip to main content'|t }}
     </a>
   </div>
-  {% include '@folwell/include/umn-header.html.twig' %}
   {% if page_top %}
     {{ page_top }}
   {% endif %}
+  {% include '@folwell/include/umn-header.html.twig' %}
+  {% include '@folwell/include/unit-identity.html.twig' %}
 
   {% if page %}
     {{ page }}
   {% endif %}
 
+  {% include '@folwell/include/umn-footer.html.twig' %}
   {% if page_bottom %}
     {{ page_bottom }}
   {% endif %}
-  {% include '@folwell/include/umn-footer.html.twig' %}
   <js-bottom-placeholder token="{{ placeholder_token|raw }}">
 </body>
 </html>
