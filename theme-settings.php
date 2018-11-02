@@ -30,7 +30,7 @@ function folwell_form_system_theme_settings_alter(&$form, FormStateInterface &$f
   $form['page_options']['page_width'] = [
     '#type' => 'radios',
     '#title' => t('Page width'),
-    '#default_value' => theme_get_setting('page_width') ? theme_get_setting('page_width') : 'fixed-width',
+    '#default_value' => theme_get_setting('page_width'),
     '#options' => [
       'fixed-width' => 'Fixed width (1200px)',
       'full-width' => 'Full width (100%)'
