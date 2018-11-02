@@ -157,5 +157,16 @@ function folwell_form_system_theme_settings_alter(&$form, FormStateInterface &$f
     '#default_value' => theme_get_setting('footer_date'),
   ];
 
+  $form['#submit'][] = 'folwell_settings_submit';
   // We are editing the $form in place, so we don't need to return anything.
+}
+
+function folwell_settings_submit($form, FormStateInterface &$form_state) {
+    $submitted = $form_state->getUserInput();
+    if ($submitted['first_line'] == null) {
+        $form_state->setValue('first_line', '');
+    }
+    if ($submitted['parent_unit'] == null) {
+        $form_state->setValue('parent_unit', '');
+    }
 }
