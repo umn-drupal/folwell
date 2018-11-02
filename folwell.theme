@@ -37,6 +37,8 @@ function folwell_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'no-sidebars';
   }
 
+  $variables['attributes']['class'][] = theme_get_setting('page_width');
+
   /* Pass UMN Theme settings to templates */
   $variables['campus_links'] = theme_get_setting('campus_links');
   $dtd_select = theme_get_setting('dtd_select');

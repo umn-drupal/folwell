@@ -1,5 +1,6 @@
 favicon:
   use_default: TRUE
+page_width: 'fixed-width'
 campus_select: 'umnhf-campus-tc'
 dtd_select: 'dtd'
 myu_text: 'sfs'
