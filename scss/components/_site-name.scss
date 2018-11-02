@@ -1,37 +1,42 @@
 //Site name: Folwell Theme Component
 .site-identity {
   background: $white;
-  line-height: 100%;
-  max-width: 1200px;  
+  //line-height: 100%;
+  margin: 0 auto;
   padding: 1em;
   z-index: 500;
 
+  .fixed-width & {
+    max-width: 1200px;
+  }
+
   h1 {
     font-size: 1.625em;
-    line-height: 2.19375;
+    line-height: 1.152692308;
 
     @include breakpoint($large-screen) {
       font-size: 1.444444444em;
+      line-height: 1.142307722;
     }
   }
 
   .sitename {
-    line-height: 0;
+    //line-height: 0;
 
     @include breakpoint($small-screen) {
-      line-height: 1.85625;
+      //line-height: 1.85625;
       margin: 0 0 2px 0;
     }
 
     @include breakpoint($large-screen) {
-      line-height: 1.65;
+      //line-height: 1.65;
     }
 
     a {
       color: $maroon;
-      font-size: $base-font-size !important;
-      line-height: $heading-line-height !important;
-      font-weight: 600;
+      //font-size: $base-font-size !important;
+      //line-height: $heading-line-height !important;
+      //font-weight: 600;
   
       &:link {
         color: $maroon;
@@ -42,11 +47,11 @@
       }
   
       @include breakpoint($small-screen) {
-        font-size: 1.625em;
+        //font-size: 1.625em;
       }
   
       @include breakpoint($large-screen) {
-        font-size: 1.444444444em;
+        //font-size: 1.444444444em;
       }
     }
   }
@@ -54,16 +59,16 @@
   .prefix-name,
   .prefix-name a,
   .subhead {
-    font-size: .8125em !important;
-    line-height: $heading-line-height !important;
+    //font-size: 1.625em;
+    line-height: $heading-line-height;
     color: $gray-medium;
     margin: 0 0 2px 0;
     border: none;
     transition: none;
 
     @include breakpoint($medium-screen) {
-      font-size: $base-mobile-font-size;
-      line-height: $heading-line-height;
+      //font-size: $base-mobile-font-size;
+      //line-height: $heading-line-height;
   
       .two-lines {
         color: $maroon;
