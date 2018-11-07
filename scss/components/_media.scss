@@ -50,26 +50,29 @@ caption {
   clear: left;
   margin-right: 1em;
 
-  & img {
+  img {
     border-radius: 50%;
   }
 }
 
+[class*="display-"] {
+  img {
+    width: auto;
+
+    @include breakpoint($medium-screen) {
+      width: 100%;
+    }
+  }
+}
+
 @include breakpoint(max-width $medium-screen) {
-  .display-100,
-  .display-50,
-  .display-33,
-  .display-20,
-  .img-circle,
-  .align-left,
-  .align-right {
+  .img-circle {
     width:auto !important;
     margin: 0 !important;
     float: none;
   }
 
   .img-circle img {
-    border-radius: 50%;
     margin: auto;
   }
 }

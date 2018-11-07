@@ -76,3 +76,42 @@ body {
 .outer-wrapper {
   @include grid-container;
 }
+
+.display-100,
+.display-50,
+.display-33,
+.display-20,
+.align-left,
+.align-right {
+  width: auto;
+  margin: 0;
+  float: none;
+}
+
+@include breakpoint($medium-screen) {
+  [class*="display-"] {
+    margin: 0;
+  }
+
+  .display-100 {
+    @include margin(null auto);
+    width: 100%
+  }
+
+  @each $per in (50, 33, 20) {
+    .display-#{$per} {
+      width: calc(#{$per}% - 2em);
+    }
+  }
+
+  .align-right {
+    float: right;
+    margin-left: 2em;
+  }
+
+  .align-left {
+    float: left;
+    margin-right: 2em;
+  }
+}
+
