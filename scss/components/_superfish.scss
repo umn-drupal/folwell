@@ -12,18 +12,28 @@
   }
 }
 
+#site-header {
+  width: 100%;
+  background-color: $gray-lighter;
+}
+
+
 .block-superfish {
   width: 100%;
+
+  .fixed-width & {
+    @extend %page-width-fixed;
+  }
 }
 
 .sf-megamenu {
   display:none;
 }
-
-div#fw-menu-wrapper {
-  width: 100%;
-  background: $gray-lighter;
-}
+//
+//div#fw-menu-wrapper {
+//  width: 100%;
+//  background: $gray-lighter;
+//}
 
 div#main-nav,
 div#header-wrapper {
