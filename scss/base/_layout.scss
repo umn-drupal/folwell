@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+.page {
+  @extend %page-width;
+
+  .fixed-width & {
+    > section,
+    > main,
+    > footer {
+      @extend %page-width-fixed;
+    }
+  }
+}
+
 $neat-grid: (
   columns: 12,
   gutter: 1.11111111em

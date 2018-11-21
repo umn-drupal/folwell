@@ -116,11 +116,3 @@ $max-width: 1200px;
     @extend %element-invisible-off;
   }
 }
-
-.page {
-  @extend %page-width;
-
-  .fixed-width & {
-    @extend %page-width-fixed;
-  }
-}
