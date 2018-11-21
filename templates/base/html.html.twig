@@ -56,6 +56,7 @@
   <js-placeholder token="{{ placeholder_token|raw }}">
 </head>
 <body{{ attributes.addClass(body_classes) }}>
+  <div class="page-wrapper">
   <div id="skip">
     <a class="visually-hidden focusable skip-link" href="#content">
         {{ 'Skip to main content'|t }}
@@ -75,6 +76,7 @@
   {% if page_bottom %}
     {{ page_bottom }}
   {% endif %}
+  </div>
   <js-bottom-placeholder token="{{ placeholder_token|raw }}">
 </body>
 </html>
