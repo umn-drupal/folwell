@@ -6,6 +6,7 @@ global-styling:
 global-scripts:
   version: VERSION
   js:
+    js/responsive-menu-tweak.js: {}
     js/scripts.js: {}
 fonts:
   css:
