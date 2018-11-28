@@ -3,21 +3,23 @@
   display: none
 }
 
-#block-responsivemenumobileicon {
-  @include breakpoint($medium-screen) {
-    display: none;
-  }
-  color: $gray-light;
-  float: right;
-  margin: -.3em .5em;
+.block-responsive-menu-toggle {
+  background-color: $gray-lighter;
+  left: 8px;
+  position: relative;
+  width: 100%;
+  z-index: 10 !important;
 
-  @include breakpoint(max-width 70em) {
-    background: $gray-lighter;
-    display: inline-block !important;
-    left: 8px;
-    position: relative;
-    width: 100%;
-    z-index: 10 !important;
+  a {
+    border: none;
+
+    &:hover {
+      background-color: $gray-lighter;
+    }
+  }
+
+  @include breakpoint($large-screen) {
+    display: none;
   }
 }
 
@@ -131,7 +133,7 @@ a.mm-next {
   }
 }
 
-#off-canvas{
+#off-canvas {
   top: 0;
   z-index: 9999;
 
@@ -140,8 +142,8 @@ a.mm-next {
     padding-top: 40px;
   }
 
-  .mm-menu.mm-theme-dark .mm-btn:after,
-  .mm-menu.mm-theme-dark .mm-btn:before {
+  &.mm-menu.mm-theme-dark .mm-btn:after,
+  &.mm-menu.mm-theme-dark .mm-btn:before {
     border-color: $black !important;
   }
 
@@ -254,4 +256,9 @@ li a.is-active {
 img#mobile-nav-m {
   height: 45px;
   @include margin(-90px auto null);
+}
+
+// Hide footer when mobile menu is open
+.mm-opened .umnhf {
+  display: none;
 }
