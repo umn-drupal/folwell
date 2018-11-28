@@ -156,6 +156,57 @@ $colors: (
       }
     }
   }
+
+  // GCSE Search box
+  .gsc-control-searchbox-only {
+    width: 250px;
+    float: right;
+    top: 35px;
+    margin-right: 30px;
+
+    form,
+    table {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    table,
+    tbody,
+    tr,
+    td {
+      background-color: transparent;
+      padding: 0;
+      border: none;
+
+      &:hover {
+        background-color: transparent;
+      }
+
+      input {
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+
+    .gsc-input-box {
+      margin-right: 10px;
+    }
+
+    .gsc-search-button {
+      button {
+        margin: 0;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
 }
 
 #umnhf-h-cl {
@@ -222,111 +273,6 @@ $colors: (
 
   @media screen and (max-width: 775px) {
     display: none;
-  }
-}
-
-#umnhf-h-search {
-  position: absolute;
-  top: 30px;
-  right: 10px;
-  background-color: inherit;
-  width: 249px;
-  height: 22px;
-
-  .links & {
-    top: 35px;
-    @media screen and (max-width: 609px) {
-      top: 0;
-    }
-  }
-
-  div {
-    position: relative;
-
-    @media screen and (max-width: 609px) {
-      &.form-item, &.form-actions {
-        // width: 190px;
-        display: inline-block;
-        vertical-align: top;
-      }
-    }
-  }
-
-  @media screen and (max-width: 609px) {
-    .dropdown & {
-      display: none;
-    }
-    .dropdown &.mobile {
-      display: block;
-    }
-  }
-
-  label {
-    @extend %element-invisible;
-  }
-
-  #umnhf-h-st {
-    border-radius: 0;
-    position: absolute;
-    right: 30px;
-    width: 175px;
-    height: 22px;
-    padding: 1px 1px 1px 3px;
-    margin: 0;
-    cursor: text;
-    color: $gray-medium;
-    border: 0;
-    background-color: $white;
-    font-size: .8em;
-    line-height: 18px;
-    box-shadow: none;
-    -webkit-appearance: none;
-    vertical-align: baseline;
-
-    @media screen and (max-width: 609px) {
-      position: relative;
-      left: initial;
-      right: initial;
-      width: 190px;
-    }
-  }
-
-  #umnhf-h-sb {
-    @include header-sprite($colors, 0 -12px);
-    border: 0;
-    color: $maroon;
-    cursor: pointer;
-    height: 22px;
-    overflow: hidden;
-    position: absolute;
-    right: 0;
-    top: 0;
-    white-space: nowrap;
-    width: 25px;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
-
-    @media screen and (max-width: 609px) {
-      position: relative;
-      top: -3px;
-    }
-  }
-
-  @media screen and (max-width: 674px) {
-    width: 184px;
-  }
-
-  @media screen and (max-width: 609px) {
-    position: relative;
-    top: auto;
-    right: auto;
-    display: block;
-    clear: both;
-    width: 226px;
-    margin: 10px 0 0 10px;
-    float: none;
-    height: 33px;
   }
 }
 
