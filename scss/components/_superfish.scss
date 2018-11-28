@@ -42,14 +42,18 @@ div#header-wrapper {
   margin-right: auto;
 }
 
-div#block-mainnavigation-2 {
-  list-style: none;
-  display: flex;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  background: $gray-lighter;
-  z-index: 20 !important;
+#block-folwell-mainnavigation {
+  display: none;
+
+  @include breakpoint($large-screen) {
+    list-style: none;
+    display: flex;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: $gray-lighter;
+    z-index: 20 !important;
+  }
 }
 
 div#block-megamenu {
@@ -266,7 +270,7 @@ ul.sf-menu {
 
     &:after {
       content: "\f107";
-      font-family: 'FontAwesome';
+      font-family: 'Font Awesome 5 Free';
       left: 0;
       line-height: 1;
       position: absolute;
@@ -277,7 +281,7 @@ ul.sf-menu {
 
   ul .sf-sub-indicator:after {
     content: "\f105";
-    // font-family: 'FontAwesome';
+    // font-family: 'Font Awesome 5 Free';
     // left: 0;
     // line-height: 1;
     margin-top: -0.1em;
@@ -578,7 +582,7 @@ ul.menu.sf-menu.sf-accordion.vertical-nav{
       color:$gray-darker;
       position:absolute;
       right:1em;
-      font-family:'fontawesome';
+      font-family: 'Font Awesome 5 Free';
     }
   }
   //highlight expanded submenu
