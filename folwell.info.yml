@@ -8,6 +8,7 @@ libraries:
   - folwell/global-styling
   - folwell/global-scripts
   - folwell/fonts
+  - folwell/fontawesome
 regions:
   header: Navigation
   featured: Featured

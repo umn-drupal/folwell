@@ -11,3 +11,13 @@ fonts:
   css:
     theme:
       '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i': { type: external, minified: true }
+fontawesome:
+  remote: https://fontawesome.com
+  version: 5.5.0
+  license:
+    name: MIT
+    url: https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
+    gpl-compatible: true
+  css:
+    theme:
+      https://use.fontawesome.com/releases/v5.5.0/css/all.css: { type: external, minified: true }
