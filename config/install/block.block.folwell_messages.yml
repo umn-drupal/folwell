@@ -10,8 +10,8 @@ _core:
   default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
 id: folwell_messages
 theme: folwell
-region: content
-weight: -6
+region: featured
+weight: -5
 provider: null
 plugin: system_messages_block
 settings:
