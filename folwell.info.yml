@@ -18,6 +18,8 @@ regions:
   sidebar_second: 'Sidebar second'
   footer_top: 'Footer Top'
   footer_bottom: 'Footer Bottom'
+stylesheets-remove:
+  - 'core/themes/classy/css/components/breadcrumb.css'
 libraries-override:
   umn_search/cse_library:
     css:
