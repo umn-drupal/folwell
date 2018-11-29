@@ -1,0 +1,20 @@
+uuid: 208707d2-dba2-4098-966f-e9b8e590f2b7
+langcode: en
+status: true
+dependencies:
+  theme:
+    - folwell
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: folwell_local_actions
+theme: folwell
+region: content
+weight: -1
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

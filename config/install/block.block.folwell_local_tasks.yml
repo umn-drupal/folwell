@@ -1,0 +1,22 @@
+uuid: bcd70c7a-f704-4766-9018-0f864e546d72
+langcode: en
+status: true
+dependencies:
+  theme:
+    - folwell
+_core:
+  default_config_hash: X9I1OB0W3WlWtrK-CNcg6hNWwa8wficanpH8pYnDZDE
+id: folwell_local_tasks
+theme: folwell
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }
