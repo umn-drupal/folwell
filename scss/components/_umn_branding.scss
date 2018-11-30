@@ -49,10 +49,14 @@ $colors: (
 #umnhf-uf.umnhf,
 #umnhf-f.umnhf {
   @extend %page-width;
-  font: normal normal 400 14px/20px Helvetica, "Helvetica Neue", "Futura", Verdana, "Geneva", sans-serif;
+  font-size: .875em;
   line-height: 20px;
   margin-top: 0;
   margin-bottom: 0;
+
+  @include breakpoint($large-screen) {
+    font-size: .777777778em;
+  }
 
   .fixed-width & {
     @extend %page-width-fixed;
@@ -157,56 +161,6 @@ $colors: (
     }
   }
 
-  // GCSE Search box
-  .gsc-control-searchbox-only {
-    width: 250px;
-    float: right;
-    top: 35px;
-    margin-right: 30px;
-
-    form,
-    table {
-      margin: 0;
-      padding: 0;
-      border: none;
-    }
-
-    table,
-    tbody,
-    tr,
-    td {
-      background-color: transparent;
-      padding: 0;
-      border: none;
-
-      &:hover {
-        background-color: transparent;
-      }
-
-      input {
-        box-shadow: none;
-        border-radius: 0;
-      }
-    }
-
-    .gsc-input-box {
-      margin-right: 10px;
-    }
-
-    .gsc-search-button {
-      button {
-        margin: 0;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-      }
-
-      svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
 }
 
 #umnhf-h-cl {
