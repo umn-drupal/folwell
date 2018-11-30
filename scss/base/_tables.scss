@@ -1,81 +1,84 @@
 //Tables: Folwell Theme Component
 
-table {
-  border-collapse: collapse;
-  margin: 0.75em 0;
-  table-layout: fixed;
-  width: 100%;
-}
-
-td, th {
-  padding: 1em;
-  text-align: left;
-}
-
-td[scope=row], th {
-  font-weight: 500;
-}
-
-td {
-  vertical-align: text-top;
-}
-
-th {
-  vertical-align: bottom;
-}
-
-tbody tr {
-  &:nth-child(even) {
-    background-color: transparentize($gray-light, .4);
+.responsive-menu-page-wrapper,
+.page {
+  table {
+    border-collapse: collapse;
+    margin: 0.75em 0;
+    table-layout: fixed;
+    width: 100%;
   }
 
-  &:nth-child(odd) {
-    background-color: $white;
-  }
-
-  &:last-child {
-    border-bottom: 2px solid transparentize($gray-light, .4);
-  }
-}
-
-thead tr {
-  background-color: $gray-light;
-  color: $gray-darker;
-}
-
-tr th {
-  font-weight: bold;
-}
-
-@media only screen and (max-width: 800px) {
-  .jrt table, .jrt tbody, .jrt td, .jrt th, .jrt thead, .jrt tr {
-    display: block;
+  td, th {
+    padding: 1em;
     text-align: left;
   }
 
-  .jrt thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  td[scope=row], th {
+    font-weight: 500;
   }
 
-  .jrt td {
-    border: none;
-    @include standard-border($very-light, top);
-    position: relative;
-    padding-left: 50%;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5em;
+  td {
+    vertical-align: text-top;
+  }
 
-    &::before {
+  th {
+    vertical-align: bottom;
+  }
+
+  tbody tr {
+    &:nth-child(even) {
+      background-color: transparentize($gray-light, .4);
+    }
+
+    &:nth-child(odd) {
+      background-color: $white;
+    }
+
+    &:last-child {
+      border-bottom: 2px solid transparentize($gray-light, .4);
+    }
+  }
+
+  thead tr {
+    background-color: $gray-light;
+    color: $gray-darker;
+  }
+
+  tr th {
+    font-weight: bold;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .jrt table, .jrt tbody, .jrt td, .jrt th, .jrt thead, .jrt tr {
+      display: block;
+      text-align: left;
+    }
+
+    .jrt thead tr {
       position: absolute;
-      left: 6px;
-      width: 45%;
-      text-align: left !important;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    .jrt td {
+      border: none;
+      @include standard-border($very-light, top);
+      position: relative;
+      padding-left: 50%;
       font-weight: 400;
       font-size: 16px;
-      line-height: 1.1em;
+      line-height: 1.5em;
+
+      &::before {
+        position: absolute;
+        left: 6px;
+        width: 45%;
+        text-align: left !important;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.1em;
+      }
     }
   }
 }
