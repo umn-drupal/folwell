@@ -14,6 +14,12 @@
       @extend %page-width-fixed;
     }
   }
+
+  .clearfix {
+    overflow: auto;
+    width: 100%;
+    clear: both;
+  }
 }
 
 $neat-grid: (
