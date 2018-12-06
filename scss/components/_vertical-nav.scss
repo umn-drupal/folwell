@@ -63,8 +63,8 @@ div#body-wrapper{
           background:$link-hover;
         }
         &:before{
+          @extend %font-awesome;
           content:'\f0c9';
-          font-family: "Font Awesome 5 Free";
           margin-right:.5em;
         }
       }

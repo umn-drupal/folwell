@@ -116,3 +116,8 @@ $max-width: 1200px;
     @extend %element-invisible-off;
   }
 }
+
+%font-awesome {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}

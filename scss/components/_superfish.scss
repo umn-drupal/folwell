@@ -269,8 +269,8 @@ ul.sf-menu {
     width: 12px;
 
     &:after {
+      @extend %font-awesome;
       content: "\f107";
-      font-family: 'Font Awesome 5 Free';
       left: 0;
       line-height: 1;
       position: absolute;
@@ -578,11 +578,11 @@ ul.menu.sf-menu.sf-accordion.vertical-nav{
   //add down arrow to li with submenus
   li.menuparent >a{
     &:before{
+      @extend %font-awesome;
       content: "\f107";
       color:$gray-darker;
       position:absolute;
       right:1em;
-      font-family: 'Font Awesome 5 Free';
     }
   }
   //highlight expanded submenu

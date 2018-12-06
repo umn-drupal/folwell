@@ -94,7 +94,7 @@ p > .btn-give {
 
 .btn-arrow:after,
 .btn-arrow:link:after {
-  font-family: 'Font Awesome 5 Free';
+  @extend %font-awesome;
   font-size: .8em;
   padding-left: 10px;
   content: "\f054";

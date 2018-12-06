@@ -13,7 +13,7 @@
     padding-left: 0;
   }
   li:after {
-    font-family: 'Font Awesome 5 Free';
+    @extend %font-awesome;
     color: $gray-medium;
     content: "\f054";
     font-style: normal;

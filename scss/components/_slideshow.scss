@@ -67,9 +67,9 @@
 
         .slick-next:before,
         .slick-prev:before {
+          @extend %font-awesome;
           color: $white;
           display: block;
-          font-family: "Font Awesome 5 Free";
           font-size: 32px;
           font-weight: 600;
           opacity: 1;
