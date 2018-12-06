@@ -42,7 +42,7 @@ div#header-wrapper {
   margin-right: auto;
 }
 
-#block-folwell-mainnavigation {
+#site-header .block-superfish {
   display: none;
 
   @include breakpoint($large-screen) {
