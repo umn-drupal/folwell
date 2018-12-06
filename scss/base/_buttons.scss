@@ -94,8 +94,7 @@ p > .btn-give {
 
 .btn-arrow:after,
 .btn-arrow:link:after {
-  @extend %font-awesome;
-  font-size: .8em;
+  @include font-awesome(.8em);
   padding-left: 10px;
   content: "\f054";
 }

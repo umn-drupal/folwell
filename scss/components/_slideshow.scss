@@ -67,10 +67,9 @@
 
         .slick-next:before,
         .slick-prev:before {
-          @extend %font-awesome;
+          @include font-awesome(32px);
           color: $white;
           display: block;
-          font-size: 32px;
           font-weight: 600;
           opacity: 1;
           padding-right: 3px;

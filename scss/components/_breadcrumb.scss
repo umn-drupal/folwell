@@ -13,11 +13,10 @@
     padding-left: 0;
   }
   li:after {
-    @extend %font-awesome;
+    @include font-awesome(.6em);
     color: $gray-medium;
     content: "\f054";
     font-style: normal;
-    font-size: .6em;
     margin-left: 5px;
   }
   li:last-child:after {

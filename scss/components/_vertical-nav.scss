@@ -63,7 +63,7 @@ div#body-wrapper{
           background:$link-hover;
         }
         &:before{
-          @extend %font-awesome;
+          @include font-awesome;
           content:'\f0c9';
           margin-right:.5em;
         }
