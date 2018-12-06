@@ -1,5 +1,7 @@
 // Media: Folwell Theme Component
-
+.clearfix {
+  @include clearfix;
+}
 figure {
   margin: 0;
 
@@ -52,6 +54,7 @@ caption {
 
   img {
     border-radius: 50%;
+    height: auto;
   }
 }
 
