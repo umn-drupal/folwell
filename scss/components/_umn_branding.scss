@@ -134,13 +134,13 @@ $colors: (
                 height: 34px;
               }
               @else {
-                height: 37px;
+                height: 38px;
               }
             }
           }
           @media screen and (max-width: 609px) {
             background-position: 0 -38px;
-            height: 29px;
+            height: 30px;
             @if (map-get($campus, class) == 'umnhf-campus-c') {
               @media only screen and (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 192dpi) {
                 background-position: 0 -39px;
