@@ -82,3 +82,7 @@ select {
   max-width: 100%;
   width: auto;
 }
+
+.views-exposed-form input[type="submit"] {
+  @extend .bg-maroon;
+}
