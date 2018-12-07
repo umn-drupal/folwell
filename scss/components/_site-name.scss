@@ -59,10 +59,7 @@
   .prefix-name,
   .prefix-name a,
   .subhead {
-    //font-size: 1.625em;
-    line-height: $heading-line-height;
     color: $gray-medium;
-    margin: 0 0 2px 0;
     border: none;
     transition: none;
 
@@ -84,5 +81,11 @@
 
 p.subhead,
 p.prefix-name {
-  margin-top: 0;
+  font-size: 1em;
+  line-height: $heading-line-height;
+  margin: 0 0 2px 0;
+
+  @include breakpoint($medium-screen) {
+    font-size: .888888889em;
+  }
 }
