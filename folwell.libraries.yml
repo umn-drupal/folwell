@@ -7,7 +7,7 @@ global-scripts:
   version: VERSION
   js:
     'js/responsive-menu-tweak.js': {}
-    'js/jquery.responsive-tables.min.js': {}
+    'js/jquery.responsive-tables.js': {}
 fonts:
   css:
     theme:
