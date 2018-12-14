@@ -2,12 +2,12 @@ global-styling:
   version: VERSION
   css:
     base:
-      css/folwell.css: {}
+      'css/folwell.css': {}
 global-scripts:
   version: VERSION
   js:
-    js/responsive-menu-tweak.js: {}
-    js/scripts.js: {}
+    'js/responsive-menu-tweak.js': {}
+    'js/jquery.responsive-tables.min.js': {}
 fonts:
   css:
     theme:
@@ -21,4 +21,4 @@ fontawesome:
     gpl-compatible: true
   css:
     theme:
-      https://use.fontawesome.com/releases/v5.5.0/css/all.css: { type: external, minified: true }
+      'https://use.fontawesome.com/releases/v5.5.0/css/all.css': { type: external, minified: true }
