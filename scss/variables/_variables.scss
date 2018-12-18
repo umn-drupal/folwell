@@ -20,55 +20,54 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
-$white:        #fff;
-$very-light:   #eee;
-$light-bg:     #ddd;
-$black:        #000;
-$blue:         #00f;
-$stormy:       #404d5b;
-$maroon:       #7a0019;
-$maroon-light: #900021;
-$maroon-dark:  #4d0010;
-$gold:         #fc3;
-$gold-light:   #ffde7a;
-$gold-header:  #ffd75f;
-$gray-darker:  #333;
-$gray-dark:    #5a5a5a;
-$gray-medium:  #777677;
-$gray-light:   #d5d6d2;
-$gray-lighter: #f0efee;
-$off-white:    #f9f7f6;
-$sf-shadow:    #8a8a8a;
+$folwell-palette: (
+  white:        #fff,
+  very-light:   #eee,
+  light-bg:     #ddd,
+  gold:         #fc3,
+  gold-light:   #ffde7a,
+  gold-header:  #ffd75f,
+  gray-light:   #d5d6d2,
+  gray-lighter: #f0efee,
+  off-white:    #f9f7f6,
+  sf-shadow:    #8a8a8a,
+);
 
+$folwell-dark-palette: (
+  black:        #000,
+  blue:         #00f,
+  stormy:       #404d5b,
+  maroon:       #7a0019,
+  maroon-light: #900021,
+  maroon-dark:  #4d0010,
+  gray-darker:  #333,
+  gray-dark:    #5a5a5a,
+  gray-medium:  #777677,
+);
 
-$off_white: $off-white;
-$dark-gray: $gray-darker;
-$medium-gray: #999;
-$light-gray: $gray-light;
-
-$link-hover: transparentize($gray-darker, 0.85);
+$link-hover: transparentize(map-get($folwell-dark-palette, gray-darker), 0.85);
 .jim-look-here {
   color: $link-hover;
 }
 
 // Font Colors
-$base-font-color: $gray-darker;
-$action-color: $maroon-light;
+$base-font-color: map-get($folwell-dark-palette, gray-darker);
+$action-color: map-get($folwell-dark-palette, maroon-light);
 
 // Border
-$base-border-color: $gray-light;
+$base-border-color: map-get($folwell-palette, gray-light);
 $base-border: 1px solid $base-border-color;
-$accent-border: 4px solid $gold;
-@mixin standard-border($border-color: $gray-light, $placement: bottom) {
+$accent-border: 4px solid map-get($folwell-palette, gold);
+@mixin standard-border($border-color: map-get($folwell-palette, gray-light), $placement: bottom) {
   border-#{$placement}: 1px solid $border-color;
 }
 
 // Background Colors
-$base-background-color: $white;
+$base-background-color: map-get($folwell-palette, white);
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px transparentize($black, .94);
+$form-box-shadow: inset 0 1px 3px transparentize(map-get($folwell-dark-palette, black), .94);
 $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
 
 // Animations
