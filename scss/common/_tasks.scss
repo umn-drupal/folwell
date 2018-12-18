@@ -11,7 +11,7 @@
     line-height: 1.5;
     padding: 0;
     margin: 5px 0;
-    border-bottom: 1px solid $base-border-color;
+    @include standard-border();
 
     li {
       list-style: none;

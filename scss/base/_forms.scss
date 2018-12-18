@@ -27,7 +27,7 @@ select {
 #{$all-text-inputs},
 select[multiple] {
   background-color: $base-background-color;
-  border: $base-border;
+  @include standard-border($placement: all);
   border-radius: $base-border-radius;
   box-shadow: $form-box-shadow;
   box-sizing: border-box;
@@ -53,7 +53,7 @@ select[multiple] {
     cursor: not-allowed;
 
     &:hover {
-      border: $base-border;
+      @include standard-border($placement: all);
     }
   }
 }
