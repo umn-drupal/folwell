@@ -1,12 +1,14 @@
 <div role="document" class="page">
-  {%  if page.header or page.mega %}
+  {% if page.header or page.mega %}
     <header id="site-header">
       <div class="outer-wrapper navigation">
         {{ page.header }}
       </div>
+      {% if page.mega %}
       <div class="outer-wrapper mega">
         {{ page.mega }}
       </div>
+      {% endif %}
     </header>
   {% endif %}
 
