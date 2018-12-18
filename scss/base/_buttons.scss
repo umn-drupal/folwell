@@ -2,7 +2,7 @@
 .button,
 #{$all-buttons} {
   appearance: none;
-  border: 1px solid transparent;
+  @include standard-border(transparent, all);
   border-radius: 0;
   cursor: pointer;
   display: inline-block;
@@ -18,17 +18,17 @@
   white-space: nowrap;
 
   &.bg-maroon {
-    color: $base-background-color;
+    color: map-get($folwell-palette, white);
     @include standard-border(map-get($folwell-dark-palette, maroon-light), bottom);
 
     &:hover {
       background-color: map-get($folwell-dark-palette, maroon-light) !important;
-      color: $base-background-color;
+      color: map-get($folwell-palette, white);
     }
   }
 
   &.btn-give {
-    color: $base-background-color !important;
+    color: map-get($folwell-palette, white) !important;
     background-color: map-get($folwell-dark-palette, maroon-light);
     border-bottom-color: map-get($folwell-dark-palette, maroon-light);
     position: relative;
@@ -42,12 +42,12 @@
       left: 2px;
       right: 2px;
       bottom: 2px;
-      border: 1px solid map-get($folwell-palette, gold);
+      @include standard-border(map-get($folwell-palette, gold), all);
     }
 
     &:hover {
       background-color: map-get($folwell-dark-palette, maroon) !important;
-      color: $base-background-color;
+      color: map-get($folwell-palette, white);
     }
   }
 
@@ -84,8 +84,8 @@ p > .btn-give {
 
 .btn-outline,
 .btn-outline:link {
-  background-color: $base-background-color;
-  border: 1pt solid map-get($folwell-dark-palette, maroon);
+  background-color: map-get($folwell-palette, white);
+  @include standard-border(map-get($folwell-dark-palette, maroon), all);
   color: map-get($folwell-dark-palette, gray-darker);
 
   &:hover {
