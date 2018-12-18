@@ -226,8 +226,7 @@ a {
     padding: .2em;
 
     &::after {
-      font-family: 'FontAwesome';
-      font-size: .8em;
+      @include font-awesome(.8em);
       padding-left: .6em;
       content: "\f054";
       color: map-get($folwell-dark-palette, gray-medium);  
@@ -243,8 +242,7 @@ a {
       background-color: $link-hover;
 
       &::after {
-        font-family: 'FontAwesome';
-        font-size: .8em;
+        @include font-awesome(.8em);
         padding-left: .6em;
         content: "\f054";
         color: map-get($folwell-dark-palette, maroon);
