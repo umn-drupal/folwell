@@ -59,7 +59,12 @@ $base-border-color: map-get($folwell-palette, gray-light);
 $base-border: 1px solid $base-border-color;
 $accent-border: 4px solid map-get($folwell-palette, gold);
 @mixin standard-border($border-color: map-get($folwell-palette, gray-light), $placement: bottom) {
-  border-#{$placement}: 1px solid $border-color;
+  @if ($placement == 'all') {
+    border: 1p solid $border-color;
+  }
+  @else {
+    border-#{$placement}: 1px solid $border-color;
+  }
 }
 
 // Background Colors
