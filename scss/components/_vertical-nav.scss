@@ -9,7 +9,7 @@ div#body-wrapper nav{
     margin:0;
     padding:0;
     width:100%;
-    background: $off-white;
+    background: map-get($folwell-palette, off-white);
     //establish indentation
     li{
       padding:0;
@@ -21,14 +21,14 @@ div#body-wrapper nav{
       //basic menu link styles
       text-decoration:none;
       display:block;
-      border-bottom:solid 1px $off-white;
+      border-bottom:solid 1px map-get($folwell-palette, off-white);
       padding:.5em;
-      color:$gray-darker;
+      color:map-get($folwell-dark-palette, gray-darker);
       position:relative;
       font-size:.833em;
       &:hover{
-        color:$maroon;
-        background:$gray-lighter;
+        color:map-get($folwell-dark-palette, maroon);
+        background:map-get($folwell-palette, gray-lighter);
       }
     }
 
@@ -36,8 +36,8 @@ div#body-wrapper nav{
     li._item-active-trail{
       >a.is-active{
         font-weight:600;
-      //  border-bottom:solid 1px $maroon;
-        color:$maroon;
+      //  border-bottom:solid 1px map-get($folwell-dark-palette, maroon);
+        color:map-get($folwell-dark-palette, maroon);
         &:after{
           left:0;
           bottom:-14px;
@@ -56,7 +56,7 @@ div#body-wrapper{
         margin:.5em 0;
         padding:.5em;
         position:relative;
-        border:1px $maroon solid;
+        border:1px map-get($folwell-dark-palette, maroon) solid;
         font-size:.85em;
         font-weight:400;
         &:hover{

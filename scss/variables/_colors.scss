@@ -1,11 +1,6 @@
-// Color definitions
-$dark-gray: #333 !default;
-$medium-gray: #999 !default;
-$light-gray: #DDD !default;
-
 // Base colors.
 $base-background-color: white !default;
-$base-font-color: $dark-gray !default;
+$base-font-color: map-get($folwell-dark-palette, gray-darker) !default;
 $base-border-color: gainsboro !default;
 $base-accent-color: #477DCA !default;
 $base-link-color: $base-accent-color !default;
@@ -20,7 +15,7 @@ $table-stripe-background: darken($table-background, 4);
 $table-stripe-background-hover: darken($table-stripe-background, 5);
 
 // Tasks colors.
-$tab-link-color: $dark-gray;
+$tab-link-color: map-get($folwell-dark-palette, gray-darker);
 $tab-active-background: $base-background-color;
 $tab-inactive-color: $base-background-color;
 $tab-inactive-hover-color: silver;
@@ -36,13 +31,13 @@ $breadcrumb-border-color: $base-border-color;
 $breadcrumb-arrow-color: $breadcrumb-border-color;
 $breadcrumb-background: $base-background-color;
 $breadcrumb-inactive-hover-color: $breadcrumb-background;
-$breadcrumb-color: $medium-gray;
+$breadcrumb-color: map-get($folwell-dark-palette, gray-medium);
 $breadcrumb-color-hover: $action-color;
 $breadcrumb-color-active: $breadcrumb-color;
 
 // Flexbox colors.
-$flex-box-border-color: $light-gray;
-$flex-box-background: lighten($light-gray, 10%);
+$flex-box-border-color: map-get($folwell-palette, gray-light);
+$flex-box-background: lighten(map-get($folwell-palette, gray-light), 10%);
 $flex-box-color: transparentize($base-font-color, 0.3);
 $flex-box-top-colors:
         tomato,

@@ -29,21 +29,21 @@
 
   tbody tr {
     &:nth-child(even) {
-      background-color: transparentize($gray-light, .4);
+      background-color: transparentize(map-get($folwell-palette, gray-light), .4);
     }
 
     &:nth-child(odd) {
-      background-color: $white;
+      background-color: map-get($folwell-palette, white);
     }
 
     &:last-child {
-      border-bottom: 2px solid transparentize($gray-light, .4);
+      border-bottom: 2px solid transparentize(map-get($folwell-palette, gray-light), .4);
     }
   }
 
   thead tr {
-    background-color: $gray-light;
-    color: $gray-darker;
+    background-color: map-get($folwell-palette, gray-light);
+    color: map-get($folwell-dark-palette, gray-darker);
   }
 
   tr th {
@@ -64,7 +64,7 @@
 
     .jrt td {
       border: none;
-      @include standard-border($very-light, top);
+      @include standard-border(map-get($folwell-palette, very-light), top);
       position: relative;
       padding-left: 50%;
       font-weight: 400;

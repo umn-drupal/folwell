@@ -1,10 +1,10 @@
 //Blockquote: Folwell Theme Component
 blockquote {
-  background: $off-white;
-  border-color: $gold;
+  background: map-get($folwell-palette, off-white);
+  border-color: map-get($folwell-palette, gold);
   border-style: solid;
   border-width: 0 0 0 6px;
-  color: $gray-darker;
+  color: map-get($folwell-dark-palette, gray-darker);
   line-height: 28px;
   margin: 0 0 24px;
   padding: 15px 26px;

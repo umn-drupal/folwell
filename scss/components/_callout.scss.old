@@ -51,7 +51,7 @@ $callout-break: max-width 50em;
 
 .callout-horizontal {
   display: flex;
-  background: $gold-light;
+  background: map-get($folwell-palette, gold-light);
 
   &>div {
     flex:1;
@@ -75,7 +75,7 @@ $callout-break: max-width 50em;
 }
 
 .callout-background {
-  background-color: $gray-lighter;
+  background-color: map-get($folwell-palette, gray-lighter);
 }
 
 /* Specific callout overlay styles */

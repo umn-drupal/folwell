@@ -2,7 +2,7 @@
 
 /* Slick styles */
 .slick {
-  background: $white;
+  background: map-get($folwell-palette, white);
   margin-bottom: 2em;
 
   img {
@@ -31,7 +31,7 @@
       }
 
       figure figcaption {
-        background: $white;
+        background: map-get($folwell-palette, white);
         margin: 0;
         padding: 1em;
       }
@@ -48,7 +48,7 @@
       top: 50%;
 
       button {
-        background: $gray-dark;
+        background: map-get($folwell-dark-palette, gray-dark);
         border-radius: 5%;
         height: 40px;
         position: absolute;
@@ -57,18 +57,18 @@
         width: 40px;
 
         &:hover, &:focus{
-          background: $gray-medium;
+          background: map-get($folwell-dark-palette, gray-medium);
         }
 
         &:focus{
           outline: auto;
-          outline-color: $blue;
+          outline-color: map-get($folwell-dark-palette, blue);
         }
 
         .slick-next:before,
         .slick-prev:before {
           @include font-awesome(32px);
-          color: $white;
+          color: map-get($folwell-palette, white);
           display: block;
           font-weight: 600;
           opacity: 1;
@@ -99,8 +99,8 @@
 //slideshow carousel
 div.paragraph-slideshow {
   padding: 0;
-  background: $white;
-  box-shadow: 0 2px 2px 0 transparentize($black, .84), 0 0 0 1px transparentize($black, .92);
+  background: map-get($folwell-palette, white);
+  box-shadow: 0 2px 2px 0 transparentize(map-get($folwell-dark-palette, black), .84), 0 0 0 1px transparentize(map-get($folwell-dark-palette, black), .92);
   height: 100%;
   margin: 0;
   margin: 1.5em auto;
@@ -112,7 +112,7 @@ div.paragraph-slideshow {
     padding: 0;
 
     div.img {
-      background: $gray-lighter;
+      background: map-get($folwell-palette, gray-lighter);
       text-align: center;
       width: 100%;
 
@@ -128,7 +128,7 @@ div.paragraph-slideshow {
 
   button.slick-next:before,
   button.slick-prev:before {
-    color: $maroon;
+    color: map-get($folwell-dark-palette, maroon);
   }
 
   //mode dots inside the carousel
@@ -140,7 +140,7 @@ div.paragraph-slideshow {
 }
 
 .slick-container {
-  background: $gold-light;
+  background: map-get($folwell-palette, gold-light);
   display: flex;
 
   & > div:first-of-type {

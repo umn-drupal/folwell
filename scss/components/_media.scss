@@ -21,14 +21,14 @@ figcaption,
 .txt-caption,
 cite {
   font-size: .85em;
-  color: $gray-medium;
+  color: map-get($folwell-dark-palette, gray-medium);
   font-style: italic;
   margin: 1.2em 1.2em 1.7em 0;
 }
 
 caption {
   font-size: .85em;
-  color: $gray-medium;
+  color: map-get($folwell-dark-palette, gray-medium);
   font-style: italic;
   margin: 0 1.2em 1em 0;
   text-align: left;
@@ -37,7 +37,7 @@ caption {
 .photo-credit {
   display: block;
   font-size: .7em;
-  color: $gray-medium;
+  color: map-get($folwell-dark-palette, gray-medium);
   margin: .6em 0 1em;
   text-transform: uppercase;
   letter-spacing: 1px;

@@ -16,7 +16,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $gray-darker;
+  color: map-get($folwell-dark-palette, gray-darker);
   font-family: $heading-font-family;
   font-size: $base-font-size;
   font-weight: 600;
@@ -24,7 +24,7 @@ h6 {
   margin: 0 0 $small-spacing;
   a,
   a:link {
-    color: $gray-darker;
+    color: map-get($folwell-dark-palette, gray-darker);
     border-bottom: 0;
   }
 }
@@ -129,7 +129,7 @@ h6 + p {
   font-size: 1.22em;
   line-height: $base-line-height;
   margin-bottom: 1.33em;
-  color: $gray-medium;
+  color: map-get($folwell-dark-palette, gray-medium);
 }
 
 @include breakpoint(320px 480px) {
@@ -187,13 +187,13 @@ h6 + p {
 }
 
 a {
-  color: $maroon-light;
+  color: map-get($folwell-dark-palette, maroon-light);
   text-decoration: none;
   transition: all $base-duration $base-timing;
-  @include standard-border($maroon-light);
+  @include standard-border(map-get($folwell-dark-palette, maroon-light));
 
   &:link {
-    // color: $maroon-light;
+    // color: map-get($folwell-dark-palette, maroon-light);
   }
 
   &:hover,
@@ -202,23 +202,23 @@ a {
   }
 
   &:focus {
-    background-color: $gold-header;
+    background-color: map-get($folwell-palette, gold-header);
   }
 
   &:visited {
-    color: $gray-dark;
-    @include standard-border($gray-dark);
+    color: map-get($folwell-dark-palette, gray-dark);
+    @include standard-border(map-get($folwell-dark-palette, gray-dark));
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.5;
-    background-color: $white;
+    background-color: map-get($folwell-palette, white);
     @include standard-border;
   }
 
   &.emphasis {
-    color: $maroon;
+    color: map-get($folwell-dark-palette, maroon);
     text-decoration: none;
     transition: all $base-duration $base-timing;
     border-bottom: none;
@@ -230,13 +230,13 @@ a {
       font-size: .8em;
       padding-left: .6em;
       content: "\f054";
-      color: $gray-medium;  
+      color: map-get($folwell-dark-palette, gray-medium);  
     }
 
     &:hover,
     &:focus,
     &:active {
-      @include standard-border($maroon);
+      @include standard-border(map-get($folwell-dark-palette, maroon));
     }
 
     &:hover {
@@ -247,16 +247,16 @@ a {
         font-size: .8em;
         padding-left: .6em;
         content: "\f054";
-        color: $maroon;
+        color: map-get($folwell-dark-palette, maroon);
       }
     }
 
     &:focus {
-      background-color: $gold-header;
+      background-color: map-get($folwell-palette, gold-header);
     }
 
     &:active {
-      background-color: $gray-light;
+      background-color: map-get($folwell-palette, gray-light);
     }
   
   }

@@ -20,14 +20,14 @@ $dtd-opts: (
 );
 $colors: (
         gold: (
-                value: $gold,
+                value: map-get($folwell-palette, gold),
                 class: umnhf-background-gold,
-                text-color: $stormy,
+                text-color: map-get($folwell-dark-palette, stormy),
         ),
         maroon: (
-                value: $maroon,
+                value: map-get($folwell-dark-palette, maroon),
                 class:umnhf-background-maroon,
-                text-color: $white,
+                text-color: map-get($folwell-palette, white),
         )
 );
 
@@ -65,7 +65,7 @@ $colors: (
   a {
     text-decoration: none;
     border-bottom: none;
-    color: $stormy;
+    color: map-get($folwell-dark-palette, stormy);
 
     &:hover,
     &:active,
@@ -251,13 +251,13 @@ $colors: (
     }
 
     .umnhf-background-gold.dropdown & {
-      background-color: $maroon;
-      color: $gold;
+      background-color: map-get($folwell-dark-palette, maroon);
+      color: map-get($folwell-palette, gold);
     }
 
     .umnhf-background-maroon.dropdown & {
-      background-color: $gold;
-      color: $maroon;
+      background-color: map-get($folwell-palette, gold);
+      color: map-get($folwell-dark-palette, maroon);
     }
 
     .dropdown &.mobile {
@@ -353,7 +353,7 @@ $colors: (
 
 // Unit Footer
 #umnhf-uf.umnhf {
-  border-top: 1px solid $gray-light;
+  border-top: 1px solid map-get($folwell-palette, gray-light);
   overflow: hidden;
   position: relative;
 
@@ -364,7 +364,7 @@ $colors: (
   p,
   li,
   h3 {
-    color: $stormy;
+    color: map-get($folwell-dark-palette, stormy);
   }
 
   h2 {
@@ -372,7 +372,7 @@ $colors: (
       margin: 0 0 15px;
       padding: 16px 8px 16px 54px;
       text-transform: uppercase;
-      color: $stormy;
+      color: map-get($folwell-dark-palette, stormy);
       border-bottom: 1px solid rgba(52, 73, 94, 0.4);
       font-family: Helvetica, "Helvetica Neue", "Futura", Verdana, "Geneva", sans-serif;
       font-size: 16px;
@@ -385,7 +385,7 @@ $colors: (
     &.umnhf-f-title {
       margin: 0;
       text-transform: uppercase;
-      color: $stormy;
+      color: map-get($folwell-dark-palette, stormy);
       font-family: Helvetica, "Helvetica Neue", "Futura", Verdana, "Geneva", sans-serif;
       font-size: 14px;
       font-weight: bold;
@@ -462,7 +462,7 @@ $colors: (
 
 // Footer
 #umnhf-f.umnhf {
-  border-top: 1px solid $gray-lighter;
+  border-top: 1px solid map-get($folwell-palette, gray-lighter);
   font-size: 14px;
   margin: 0 auto 5px;
   padding: 15px 0 0;

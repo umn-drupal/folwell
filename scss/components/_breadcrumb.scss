@@ -14,7 +14,7 @@
   }
   li:after {
     @include font-awesome(.6em);
-    color: $gray-medium;
+    color: map-get($folwell-dark-palette, gray-medium);
     content: "\f054";
     font-style: normal;
     margin-left: 5px;
@@ -26,7 +26,7 @@
   li:last-child {
     font-size: 0.778em;
     font-weight: 400;
-    color: $gray-medium;
+    color: map-get($folwell-dark-palette, gray-medium);
   }
   li {
     display: inline-block;
@@ -34,18 +34,18 @@
     font-size: 0.778em;
   }
   a {
-    color: $gray-medium;
+    color: map-get($folwell-dark-palette, gray-medium);
     text-decoration: none;
     transition: color 500ms ease-in-out;
-    border-bottom: 1px solid $gray-medium;
+    border-bottom: 1px solid map-get($folwell-dark-palette, gray-medium);
     font-weight: 400;
   }
   a:hover {
-    border-bottom: 1px solid $gray-medium;
+    border-bottom: 1px solid map-get($folwell-dark-palette, gray-medium);
     background-color: #eaecef;
   }
   a:focus {
-    border-bottom: 1px solid $gray-medium;
+    border-bottom: 1px solid map-get($folwell-dark-palette, gray-medium);
     background-color: #ffd75f;
   }
 }

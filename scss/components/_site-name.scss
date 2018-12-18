@@ -1,6 +1,6 @@
 //Site name: Folwell Theme Component
 .site-identity {
-  background: $white;
+  background: map-get($folwell-palette, white);
   //line-height: 100%;
   margin: 0 auto;
   padding: 1em;
@@ -33,13 +33,13 @@
     }
 
     a {
-      color: $maroon;
+      color: map-get($folwell-dark-palette, maroon);
       //font-size: $base-font-size !important;
       //line-height: $heading-line-height !important;
       //font-weight: 600;
   
       &:link {
-        color: $maroon;
+        color: map-get($folwell-dark-palette, maroon);
       }
   
       &:hover {
@@ -59,7 +59,7 @@
   .prefix-name,
   .prefix-name a,
   .subhead {
-    color: $gray-medium;
+    color: map-get($folwell-dark-palette, gray-medium);
     border: none;
     transition: none;
 
@@ -68,14 +68,14 @@
       //line-height: $heading-line-height;
   
       .two-lines {
-        color: $maroon;
+        color: map-get($folwell-dark-palette, maroon);
       }
     }
   }
 
   .prefix-name a:hover {
-    @include standard-border($gray-darker);
-    background: $gray-lighter;
+    @include standard-border(map-get($folwell-dark-palette, gray-darker));
+    background: map-get($folwell-palette, gray-lighter);
   }
 }
 

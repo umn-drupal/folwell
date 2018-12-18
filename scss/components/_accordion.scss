@@ -11,7 +11,7 @@
   padding: 1em 1em 1em 2.3em;
   min-height: 0;
   font-size: 100%;
-  background-color: $light-bg !important;
+  background-color: map-get($folwell-palette, light-bg) !important;
   border-radius: 0;
   border: none;
 }
@@ -49,14 +49,14 @@
 .ui-widget-header .ui-state-default {
   background: none;
   font-weight: normal;
-  color: $gray-darker;
+  color: map-get($folwell-dark-palette, gray-darker);
   font-family: $base-font-family;
 }
 
 .ui-widget-content {
-  color: $gray-darker;
+  color: map-get($folwell-dark-palette, gray-darker);
   border: none;
-  background: $off_white;
+  background: map-get($folwell-palette, off-white);
   line-height: $base-line-height;
 }
 
@@ -73,8 +73,8 @@
   margin-bottom: 2rem;
 
   h3 {
-    background-color: $gold;
-    color: $gray-darker;
+    background-color: map-get($folwell-palette, gold);
+    color: map-get($folwell-dark-palette, gray-darker);
     cursor: pointer;
     font-size: 1.71098rem;
     margin: 0.666em 0;
@@ -91,7 +91,7 @@
     &:hover,
     &:focus,
     &.ui-state-active {
-      background-color: $gold-header !important;
+      background-color: map-get($folwell-palette, gold-header) !important;
     }
 
     .arrow {
@@ -127,7 +127,7 @@
 }
 
 .ui-widget {
-  color: $gray-darker;
+  color: map-get($folwell-dark-palette, gray-darker);
   font-family: $base-font-family;
   font-weight: 400;
   line-height: $base-line-height;
@@ -157,7 +157,7 @@
 .ui-state-active {
   a,
   a:link {
-    color: $gray-darker !important;
+    color: map-get($folwell-dark-palette, gray-darker) !important;
     border-bottom: none;
   }
 }
@@ -165,7 +165,7 @@
 h3.ui-accordion-header {
   a,
   a:link {
-    color: $gray-darker;
+    color: map-get($folwell-dark-palette, gray-darker);
     border-bottom: none;
 
     &:hover {

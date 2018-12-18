@@ -4,7 +4,7 @@
 }
 
 .block-responsive-menu-toggle {
-  background-color: $gray-lighter;
+  background-color: map-get($folwell-palette, gray-lighter);
   left: 8px;
   position: relative;
   width: 100%;
@@ -14,7 +14,7 @@
     border: none;
 
     &:hover {
-      background-color: $gray-lighter;
+      background-color: map-get($folwell-palette, gray-lighter);
     }
   }
 
@@ -41,19 +41,19 @@ a.mm-title {
 }
 
 .responsive-menu-toggle-icon {
-  background: $gray-lighter;
+  background: map-get($folwell-palette, gray-lighter);
   height: 37px;
   left: 1em;
   width: 85px;
 
   span.label {
-    color: $black;
+    color: map-get($folwell-dark-palette, black);
   }
 
   &:before,
   &:after,
   span.icon {
-    background: $black;
+    background: map-get($folwell-dark-palette, black);
   }
 }
 
@@ -68,18 +68,18 @@ a.mm-title {
   }
 
   &.mm-theme-dark {
-    background: $gray-light
+    background: map-get($folwell-palette, gray-light)
   }
 }
 
 .mm-listview {
   .is-active {
-    background: $off_white;
+    background: map-get($folwell-palette, off-white);
   }
 
   & > li {
-    background: $off_white;
-    color: $black;
+    background: map-get($folwell-palette, off-white);
+    color: map-get($folwell-dark-palette, black);
     border: none !important;
 
     &:after,
@@ -96,13 +96,13 @@ a.mm-title {
       @include standard-border($placement: left);
 
       .mm-menu.mm-theme-dark &:after {
-        border-color: $black;
+        border-color: map-get($folwell-dark-palette, black);
       }
     }
   }
 
   .mm-next {
-    background: $off_white;
+    background: map-get($folwell-palette, off-white);
     width: 50px;
     padding: 0;
     position: absolute;
@@ -121,13 +121,13 @@ a.mm-title {
 }
 
 a.mm-next {
-  background-color: $maroon;
+  background-color: map-get($folwell-dark-palette, maroon);
 
   &:hover {
-    background-color: $maroon;
+    background-color: map-get($folwell-dark-palette, maroon);
 
     #off-canvas & {
-      background-color: $off_white;
+      background-color: map-get($folwell-palette, off-white);
       @include standard-border;
     }
   }
@@ -138,19 +138,19 @@ a.mm-next {
   z-index: 9999;
 
   .mm-panels > .mm-panel.mm-hasnavbar {
-    background: $off_white;
+    background: map-get($folwell-palette, off-white);
     padding-top: 40px;
   }
 
   &.mm-menu.mm-theme-dark .mm-btn:after,
   &.mm-menu.mm-theme-dark .mm-btn:before {
-    border-color: $black !important;
+    border-color: map-get($folwell-dark-palette, black) !important;
   }
 
   a,
   a:link {
     @include standard-border;
-    color: $gray-darker;
+    color: map-get($folwell-dark-palette, gray-darker);
     font-size: 1em;
   }
 }
@@ -158,11 +158,11 @@ a.mm-next {
 #toggle-icon {
   a,
   a:link {
-    border-bottom: 0px transparent $white !important;
+    border-bottom: 0px transparent map-get($folwell-palette, white) !important;
   }
 
   .responsive-menu-toggle-icon {
-    background-color: $gray-lighter;
+    background-color: map-get($folwell-palette, gray-lighter);
     display: block;
     height: 35px;
     margin-top: 0;
@@ -208,7 +208,7 @@ a.mm-next {
 }
 
 .mm-navbar {
-  border-bottom: 1px solid $gray-light !important;
+  border-bottom: 1px solid map-get($folwell-palette, gray-light) !important;
 
   .mm-title {
     height: 60px;
@@ -221,8 +221,8 @@ a.mm-next {
 
   .mm-panel.mm-hasnavbar & {
     display: block;
-    background: $gray-lighter;
-    background: $gold-header;
+    background: map-get($folwell-palette, gray-lighter);
+    background: map-get($folwell-palette, gold-header);
     height: 100px;
   }
 }
@@ -235,7 +235,7 @@ img#close-icon {
 
 a#close-nav::after {
   @include font-awesome(1.1em);
-  -webkit-text-stroke: .008em $gold-header;
+  -webkit-text-stroke: .008em map-get($folwell-palette, gold-header);
   content: "\f00d";
   margin-right: 1em;
 }
