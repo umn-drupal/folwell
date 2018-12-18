@@ -42,34 +42,36 @@ div#header-wrapper {
   margin-right: auto;
 }
 
-#site-header .block-superfish {
-  display: none;
-  @extend %page-width;
+#site-header {
+  .navigation .block-superfish {
+    display: none;
+    @extend %page-width;
 
-  .fixed-width & {
-    @extend %page-width-fixed;
+    .fixed-width & {
+      @extend %page-width-fixed;
+    }
+
+    @include breakpoint($large-screen) {
+      list-style: none;
+      display: flex;
+      background: map-get($folwell-palette, gray-lighter);
+      z-index: 20 !important;
+    }
   }
 
-  @include breakpoint($large-screen) {
-    list-style: none;
+  .mega .block-superfish {
     display: flex;
     background: map-get($folwell-palette, gray-lighter);
-    z-index: 20 !important;
+    z-index: 6 !important;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    ul.sf-menu li.sfHover>ul {
+      top: auto;
+      padding-bottom: .45em;
+    }
   }
-}
-
-div#block-megamenu {
-  display: flex;
-  background: map-get($folwell-palette, gray-lighter);
-  z-index: 6 !important;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div#block-megamenu ul.sf-menu li.sfHover>ul {
-    top: auto;
-    padding-bottom: .45em;
 }
 
 ul.sf-hidden>li {
