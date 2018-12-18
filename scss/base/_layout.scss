@@ -102,14 +102,10 @@ body {
 .align-left,
 .align-right {
   width: auto;
-  margin: 0;
   float: none;
 }
 
 @include breakpoint($medium-screen) {
-  [class*="display-"] {
-    margin: 0;
-  }
 
   .display-100 {
     @include margin(null auto);
@@ -131,5 +127,9 @@ body {
     float: left;
     margin-right: 2em;
   }
-}
 
+  .align-center {
+    text-align: center;
+    @include margin(null auto);
+  }
+}
