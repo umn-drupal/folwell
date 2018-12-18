@@ -1,4 +1,18 @@
-.bg-maroon {
-  background-color: $maroon;
+@each $color-name, $color in $folwell-palette {
+  .bg-#{$color-name} {
+    background-color: $color;
+
+    @if $color-name != white {
+      a:hover {
+        color: map-get($folwell-palette, white);
+      }
+    }
+  }
 }
 
+@each $color-name, $color in $folwell-dark-palette {
+  .bg-#{$color-name} {
+    background-color: $color;
+    color: map-get($folwell-palette, white);
+  }
+}
