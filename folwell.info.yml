@@ -11,6 +11,7 @@ libraries:
   - folwell/fontawesome
 regions:
   header: Navigation
+  mega: 'Mega menu'
   featured: Featured
   breadcrumb: Breadcrumb
   sidebar_first: 'Sidebar first'
