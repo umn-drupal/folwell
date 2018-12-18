@@ -6,11 +6,16 @@
     margin: 0;
     padding: .5em .5em .5em 1.1em;
     position: relative;
-    //margin-left: 1.1em;
-    //top: -15px;
-  }
-  ol li:before {
-    padding-left: 0;
+
+    li {
+      display: inline-block;
+      padding-left: 0;
+      font-size: 0.778em;
+
+      &:before {
+        padding-left: 0;
+      }
+    }
   }
   li:after {
     @include font-awesome(.6em);
@@ -27,11 +32,6 @@
     font-size: 0.778em;
     font-weight: 400;
     color: map-get($folwell-dark-palette, gray-medium);
-  }
-  li {
-    display: inline-block;
-    padding-left: 0;
-    font-size: 0.778em;
   }
   a {
     color: map-get($folwell-dark-palette, gray-medium);
