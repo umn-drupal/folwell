@@ -129,7 +129,8 @@ ul.sf-menu {
       width: 100%;
 
       a,
-      span {
+      span.nolink,
+      span[class*='sf-depth'] {
         padding: .8em 0 .8em 1.2em;
         border-bottom: none;
       }
@@ -253,7 +254,8 @@ ul.sf-menu {
   /**
    * Arrows.
    */
-  .sf-with-ul {
+  a.sf-with-ul,
+  span.sf-with-ul {
     padding-right: 2.62em;
   }
 
