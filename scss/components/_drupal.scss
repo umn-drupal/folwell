@@ -44,3 +44,9 @@
     }
   }
 }
+
+.simplesamlphp-auth-login-link {
+  @extend .btn;
+  @extend .btn-full;
+  background-color: map-get($folwell-dark-palette, maroon);
+}
