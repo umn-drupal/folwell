@@ -2,7 +2,7 @@
 
 This repository includes the Folwell theme for Drupal 8 as part of the Drupal 8 Enterprise and Lite products supported by OIT at the University of Minnesota. Folwell is the recommended base theme for all Drupal 8 sites going forward, and will be the theme installed by default for all new Drupal 8 sites beginning in January 2019.
 
-Folwell is built with Node Sass and Gulp, and uses the Bourbon and Bitters libraries. It uses the Drupal 8 [Neato](https://www.drupal.org/project/neato) base theme. See below for build instructions for local installs.
+Folwell is built with Node Sass and Gulp, and uses the Bourbon and Bitters libraries. It extends the Drupal 8 [Neato](https://www.drupal.org/project/neato) base theme. See below for build instructions for local installs.
 
 ## Recommended modules
 
@@ -28,6 +28,6 @@ In addition to the recommended modules above, Folwell is also supplemented by th
 
 Folwell does not include a CSS grid system or layout tools beyond some rudimentary width/float classes; it is expected that this theme will be used in conjunction with Drupal 8's Layout Builder. Layout Builder is currently an "Experimental" module in Drupal 8.6, but is usable in its current state, and will be marked stable with the release of Drupal 8.7 in Spring 2019.
 
-To provide additional layouts for Layout Builder, the Drupal 8 platform includes the Radix Layouts module, which will be familiar to users of UMNs Drupal 7 platform, and enabling that module is recommended. Any additional layouts that might be added to the platform in the future will be included in the Folwell Components module.
+To provide additional layouts for Layout Builder, the Drupal 8 platform includes the Radix Layouts module, which will be familiar to users of UMNs Drupal 7 platform, and enabling that module is recommended. Any additional layouts that might be added to the platform in the future will be included in the [Folwell Components](#folwell-components) module.
 
 ## Building Folwell
