@@ -4,6 +4,8 @@ This repository includes the Folwell theme for Drupal 8 as part of the Drupal 8 
 
 Folwell is built with Node Sass and Gulp, and uses the Bourbon and Bitters libraries. It extends the Drupal 8 [Neato](https://www.drupal.org/project/neato) base theme. See below for [build instructions](#building-folwell) for local installs.
 
+Sites currently using Folwell include [drupalmanagment.umn.edu](https://drupalmanagement.umn.edu). We will add to this list as sites adopt this theme, and Folwell receives a production release in January 2019.
+
 ## Recommended modules
 
 Folwell expects the following modules to be enabled. All are available in the [UMN Drupal 8 platform repository](https://github.umn.edu/drupalplatform/d8-composer). Not all are currently enabled by default, but once Folwell becomes the default base theme for the platform, any new sites created in Drupal 8 will have all of these modules enabled out of the box.
