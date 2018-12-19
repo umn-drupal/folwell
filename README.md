@@ -34,6 +34,10 @@ To provide additional layouts for Layout Builder, the Drupal 8 platform includes
 
 There are sidebar regions in the theme for sitewide elements such as left vertical navigation (a themed version of which is not yet available). We request your feedback for the utilty of these sidebar regions and how we can adjust them to accommodate user needs.
 
+## Theme Settings
+
+Folwell includes some settings for site wide header & footer elements. Theme settings can be found at `admin/appearance/settings/folwell`.
+
 ## Building Folwell
 
 Folwell is built with Node Sass and Gulp. In development as well as deployment, we use the 8.x LTS version (carbon) of Node as well as npm 6.5.x (this will likely change to the 10.x LTS version in early 2019). We recommend using [nvm](https://github.com/creationix/nvm) to enable controlling Node versions.
