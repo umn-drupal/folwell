@@ -69,6 +69,10 @@
     opacity: 0.5;
     background-color: map-get($folwell-dark-palette, maroon-dark);
   }
+
+  &:visited {
+    color: map-get($folwell-palette, white);
+  }
 }
 
 p > .btn {
