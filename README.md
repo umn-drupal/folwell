@@ -2,7 +2,7 @@
 
 This repository includes the Folwell theme for Drupal 8 as part of the Drupal 8 Enterprise and Lite products supported by OIT at the University of Minnesota. Folwell is the recommended base theme for all Drupal 8 sites going forward, and will be the theme installed by default for all new Drupal 8 sites beginning in January 2019.
 
-Folwell is built with Node Sass and Gulp, and uses the Bourbon and Bitters libraries. It extends the Drupal 8 [Neato](https://www.drupal.org/project/neato) base theme. See below for build instructions for local installs.
+Folwell is built with Node Sass and Gulp, and uses the Bourbon and Bitters libraries. It extends the Drupal 8 [Neato](https://www.drupal.org/project/neato) base theme. See below for [build instructions](#building-folwell) for local installs.
 
 ## Recommended modules
 
@@ -30,4 +30,16 @@ Folwell does not include a CSS grid system or layout tools beyond some rudimenta
 
 To provide additional layouts for Layout Builder, the Drupal 8 platform includes the Radix Layouts module, which will be familiar to users of UMNs Drupal 7 platform, and enabling that module is recommended. Any additional layouts that might be added to the platform in the future will be included in the [Folwell Components](#folwell-components) module.
 
+There are sidebar regions in the theme for sitewide elements such as left vertical navigation (a themed version of which is not yet available). We request your feedback for the utilty of these sidebar regions and how we can adjust them to accommodate user needs.
+
 ## Building Folwell
+
+Folwell is built with Node Sass and Gulp. In development as well as deployment, we use the 8.x LTS version (carbon) of Node as well as npm 6.5.x (this will likely change to the 10.x LTS version in early 2019). We recommend using [nvm](https://github.com/creationix/nvm) to enable controlling Node versions.
+
+When building for remote deployment, our process includes installing Node lts/carbon, updating npm, and running gulp to build stylesheets, source maps, etc. We recommend the same for local builds:
+
+```
+nvm install lts/carbon
+npm install -g npm
+./node_modules/.bin/gulp sass
+```
