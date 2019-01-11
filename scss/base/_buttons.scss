@@ -73,6 +73,10 @@
   &:visited {
     color: map-get($folwell-palette, white);
   }
+
+  &.btn-outline:visited {
+    color: map-get($folwell-dark-palette, gray-dark)
+  }
 }
 
 p > .btn {
