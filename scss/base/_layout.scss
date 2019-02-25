@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+$neat-grid: (
+        columns: 12,
+        gutter: 1.11111111em
+);
+
 .page {
   @extend %page-width;
 
@@ -21,11 +26,6 @@
     clear: both;
   }
 }
-
-$neat-grid: (
-  columns: 12,
-  gutter: 1.11111111em
-);
 
 body {
   margin: 0;
@@ -101,6 +101,7 @@ body {
 .align-left,
 .align-right {
   width: auto;
+  margin: 0;
   float: none;
 }
 
