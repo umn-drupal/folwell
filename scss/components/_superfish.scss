@@ -139,9 +139,14 @@ ul.sf-menu {
     }
   }
 }
+span.nolink {
+  transition: all $base-duration $base-timing;
+}
 
-a.sf-depth-1 {
+a.sf-depth-1,
+span.nolink.sf-depth-1 {
   text-align: center;
+  cursor: pointer;
 
   li &:hover {
     background: map-get($folwell-palette, off-white);
