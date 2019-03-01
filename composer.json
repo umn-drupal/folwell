@@ -1,0 +1,15 @@
+{
+  "name": "umn/folwell",
+  "description": "Modular components for using Folwell theme in sites",
+  "type": "drupal-theme-custom",
+  "authors": [
+    {
+      "name": "Jim Hart",
+      "email": "hart0554@umn.edu"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "drupal/neato": "^1.8"
+  }
+}
