@@ -24,6 +24,16 @@ cite {
   color: map-get($folwell-dark-palette, gray-medium);
   font-style: italic;
   margin: 1.2em 1.2em 1.7em 0;
+
+  p {
+    margin-bottom: 1.7em;
+  }
+
+  .photo-credit {
+    margin-top: 0;
+    font-style: normal;
+    font-size: .823529426em;
+  }
 }
 
 caption {
