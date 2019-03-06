@@ -94,6 +94,9 @@ function folwell_preprocess_html(&$variables) {
   $variables['parent_unit'] = theme_get_setting('parent_unit');
   $variables['parent_url'] = theme_get_setting('parent_url');
 
+  // Verify if page is home
+  $variables['is_home_page'] = \Drupal::service('path.matcher')->isFrontPage();
+
 }
 
 /**
@@ -113,10 +116,10 @@ function folwell_preprocess_page(&$variables) {
 }
 
 /**
- * Implements template_preprocess_node.
+ * Implements template_preprocess_page_title.
  *
  * @param array $variables
  */
-function folwell_preprocess_node(&$variables) {
+function folwell_preprocess_page_title(&$variables) {
+  $variables['is_home_page'] = \Drupal::service('path.matcher')->isFrontPage();
 }
-
