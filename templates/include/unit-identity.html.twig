@@ -1,3 +1,4 @@
+{% set sitename_tag = (is_home_page) ? 'h1' : 'p' %}
 <header class="site-identity">
     {% if parent_unit or first_line %}
         <p class="prefix-name">
@@ -10,5 +11,7 @@
             {% endif %}
         </p>
     {% endif %}
-    <h1 class="sitename"><a href="{{ path('<front>') }}">{{ site_name }}</a></h1>
+        <{{ sitename_tag }} class="sitename">
+            <a href="{{ path('<front>') }}">{{ site_name }}</a>
+        </{{ sitename_tag }}>
 </header>

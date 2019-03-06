@@ -21,6 +21,15 @@
   }
 
   .sitename {
+    font-size: 1.625em;
+    line-height: 1.152692308;
+    font-weight: 600;
+
+    @include breakpoint($large-screen) {
+      font-size: 1.444444444em;
+      line-height: 1.142307722;
+    }
+
     //line-height: 0;
 
     @include breakpoint($small-screen) {
@@ -34,6 +43,7 @@
 
     a {
       color: map-get($folwell-dark-palette, maroon);
+      border: none;
       //font-size: $base-font-size !important;
       //line-height: $heading-line-height !important;
       //font-weight: 600;
