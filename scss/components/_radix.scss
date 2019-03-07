@@ -1,0 +1,15 @@
+.container-fluid .row {
+  @include grid-collapse();
+
+  .col-md-4 {
+    @include grid-column(4);
+  }
+
+  .col-md-8 {
+    @include grid-column(8);
+  }
+
+  .col-md-12 {
+    @include grid-column(12);
+  }
+}
