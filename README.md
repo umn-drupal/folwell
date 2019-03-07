@@ -49,3 +49,5 @@ nvm install lts/carbon
 npm install -g npm
 ./node_modules/.bin/gulp sass
 ```
+
+*Note:* A compiled version of Folwell is available as a release tag on the `dist` branch, currently `1.0.1`.  

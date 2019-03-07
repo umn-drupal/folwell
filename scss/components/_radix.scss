@@ -1,0 +1,13 @@
+.container-fluid .row {
+  @include grid-collapse();
+
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      position: relative;
+      min-height: 1px;
+      @include breakpoint($medium-screen) {
+        @include grid-column($i);
+      }
+    }
+  }
+}

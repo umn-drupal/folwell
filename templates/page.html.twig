@@ -1,11 +1,11 @@
 <div role="document" class="page">
   {% if page.header or page.mega %}
     <header id="site-header">
-      <div class="outer-wrapper navigation">
+      <div class="clearfix navigation">
         {{ page.header }}
       </div>
       {% if page.mega %}
-      <div class="outer-wrapper mega">
+      <div class="clearfix mega">
         {{ page.mega }}
       </div>
       {% endif %}
@@ -22,13 +22,13 @@
 
   {% if page.breadcrumb %}
     <section id="breadcrumb">
-      <div class="outer-wrapper">
+      <div class="clearfix">
         {{ page.breadcrumb }}
       </div>
     </section>
   {% endif %}
 
-  <main role="main" class="outer-wrapper">
+  <main role="main" class="clearfix">
     <a id="main-content" tabindex="-1"></a>
 
     {% if page.sidebar_first %}

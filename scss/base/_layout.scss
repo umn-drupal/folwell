@@ -21,9 +21,7 @@ $neat-grid: (
   }
 
   .clearfix {
-    overflow: auto;
-    width: 100%;
-    clear: both;
+    @include clearfix;
   }
 }
 
@@ -88,10 +86,6 @@ body {
       }
     }
   }
-}
-
-.outer-wrapper {
-  @include grid-container;
 }
 
 .display-100,
