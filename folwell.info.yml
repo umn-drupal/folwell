@@ -26,3 +26,7 @@ libraries-override:
     css:
       theme:
         css/umn-search-form.css: false
+  radix_layouts/radix_layouts:
+    css:
+      theme:
+        radix_layouts.css: false
