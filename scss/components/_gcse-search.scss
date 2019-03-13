@@ -42,6 +42,15 @@
     }
   }
 
+  &.links .gsc-control-searchbox-only {
+    @include breakpoint(610px) {
+      top: -55px;
+    }
+    @include breakpoint(775px) {
+      top: -45px;
+    }
+  }
+
   .mobile .gsc-control-searchbox-only {
     display: block;
     width: 95%;
