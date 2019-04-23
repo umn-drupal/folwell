@@ -5,6 +5,7 @@
   margin: 0 auto;
   padding: 1em;
   z-index: 500;
+  @include clearfix;
 
   .fixed-width & {
     max-width: 1200px;
@@ -98,4 +99,8 @@ p.prefix-name {
   @include breakpoint($medium-screen) {
     font-size: .888888889em;
   }
+}
+
+.folwell-identity {
+  float: left;
 }
