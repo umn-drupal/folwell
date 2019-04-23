@@ -10,6 +10,7 @@ libraries:
   - folwell/fonts
   - folwell/fontawesome
 regions:
+  identity: Site Identity
   header: Navigation
   # mega: 'Mega menu'
   featured: Featured
