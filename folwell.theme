@@ -88,15 +88,6 @@ function folwell_preprocess_html(&$variables) {
   $block_output = $search_block_instance->build();
   $variables['search_block'] = $block_output;
 
-  // Pass site identity settings to html.html.twig
-  $variables['site_name'] = theme_get_setting('site_name') ? theme_get_setting('site_name') : \Drupal::config('system.site')->get('name');
-  $variables['first_line'] = theme_get_setting('first_line');
-  $variables['parent_unit'] = theme_get_setting('parent_unit');
-  $variables['parent_url'] = theme_get_setting('parent_url');
-
-  // Verify if page is home
-  $variables['is_home_page'] = \Drupal::service('path.matcher')->isFrontPage();
-
 }
 
 /**
@@ -106,13 +97,31 @@ function folwell_preprocess_html(&$variables) {
  */
 function folwell_preprocess_page(&$variables) {
 
-  $site_name = \Drupal::configFactory()->get('system.site')->get('name');
+  $site_name = Drupal::configFactory()->get('system.site')->get('name');
 
   $variables['linked_site_name'] = [
     '#type'  => 'link',
     '#title' => $site_name,
     '#url'   => Url::fromRoute('<front>'),
   ];
+
+  $identity = [
+    '#theme' => 'folwell_identity',
+  ];
+
+  // Get values for site identity
+  $identity['#site_name'] = theme_get_setting('site_name') ? theme_get_setting('site_name') : Drupal::config('system.site')->get('name');
+  $identity['#first_line'] = theme_get_setting('first_line');
+  $identity['#parent_unit'] = theme_get_setting('parent_unit');
+  $identity['#parent_url'] = theme_get_setting('parent_url');
+  $identity['#is_home_page'] = Drupal::service('path.matcher')->isFrontPage();
+
+  $identity['#weight'] = -999;
+
+  $variables['page']['identity']['folwell_identity'] = $identity;
+  $variables['page']['identity']['#sorted'] = FALSE;
+  $variables['page']['identity']['#region'] = 'identity';
+
 }
 
 /**
@@ -121,5 +130,20 @@ function folwell_preprocess_page(&$variables) {
  * @param array $variables
  */
 function folwell_preprocess_page_title(&$variables) {
-  $variables['is_home_page'] = \Drupal::service('path.matcher')->isFrontPage();
+  $variables['is_home_page'] = Drupal::service('path.matcher')->isFrontPage();
+}
+
+function folwell_theme($existing, $type, $theme, $path) {
+  return [
+    'folwell_identity' => [
+      'template' => 'folwell-identity',
+      'variables' => [
+        'site_name' => NULL,
+        'first_line' => NULL,
+        'parent_unit' => NULL,
+        'parent_url' => NULL,
+        'is_home_page' => FALSE,
+      ]
+    ]
+  ];
 }
