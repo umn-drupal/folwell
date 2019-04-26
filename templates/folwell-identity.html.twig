@@ -1,5 +1,5 @@
 {% set sitename_tag = (is_home_page) ? 'h1' : 'p' %}
-<header class="site-identity">
+<header class="folwell-identity">
     {% if parent_unit or first_line %}
         <p class="prefix-name">
             {% if parent_unit %}
@@ -11,7 +11,7 @@
             {% endif %}
         </p>
     {% endif %}
-        <{{ sitename_tag }} class="sitename">
-            <a href="{{ path('<front>') }}">{{ site_name }}</a>
-        </{{ sitename_tag }}>
+    <{{ sitename_tag }} class="sitename">
+    <a href="{{ path('<front>') }}">{{ site_name }}</a>
+</{{ sitename_tag }}>
 </header>
