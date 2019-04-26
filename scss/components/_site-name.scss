@@ -101,6 +101,37 @@ p.prefix-name {
   }
 }
 
-.folwell-identity {
-  float: left;
+.region-identity {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+  > div,
+  > section,
+  > p,
+  > aside,
+  > nav {
+    margin: 0 1em 0 0;
+  }
+
+  @include breakpoint($large-screen) {
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    .folwell-identity {
+      margin-right: auto;
+    }
+
+    > div,
+    > section,
+    > p,
+    > aside,
+    > nav {
+      margin: 0 0 0 1em;
+    }
+  }
+
+  .folwell-identity {
+    flex-grow: 2;
+  }
 }
