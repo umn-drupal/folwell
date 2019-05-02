@@ -1,11 +1,8 @@
-uuid: ebe95617-78ab-47c2-90b3-5db73b86e8ef
 langcode: en
 status: true
 dependencies:
   theme:
     - folwell
-_core:
-  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
 id: folwell_page_title
 theme: folwell
 region: content

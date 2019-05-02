@@ -1,4 +1,3 @@
-uuid: b8620af9-6269-4f34-af25-52c3615b55a6
 langcode: en
 status: true
 dependencies:
@@ -8,8 +7,6 @@ dependencies:
     - system
   theme:
     - folwell
-_core:
-  default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: folwell_account_menu
 theme: folwell
 region: footer_top
