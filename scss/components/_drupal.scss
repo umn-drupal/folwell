@@ -18,7 +18,7 @@
     &:focus,
     &.is-active {
       color: #000;
-      text-decoration: underline;  
+      text-decoration: underline;
     }
   }
 }
@@ -49,4 +49,8 @@
   @extend .btn;
   @extend .btn-full;
   @extend .bg-maroon;
+}
+
+.views_row {
+  @include clearfix;
 }
