@@ -25,7 +25,7 @@ function folwell_form_system_theme_settings_alter(&$form, FormStateInterface &$f
   $form['page_options'] = [
     '#type' => 'details',
     '#title' => t('Page options'),
-    '#open' => TRUE,
+    '#open' => FALSE,
   ];
   $form['page_options']['page_width'] = [
     '#type' => 'radios',
