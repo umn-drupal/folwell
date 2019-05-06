@@ -154,8 +154,27 @@ function folwell_theme($existing, $type, $theme, $path) {
  *
  */
 function folwell_form_node_layout_builder_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  foreach (['submit', 'discard_changes', 'revert'] as $action) {
-    $attributes = array_key_exists('#attributes', $form['actions'][$action]) ? $form['actions'][$action]['#attributes'] : [];
+  _folwell_form_button_styling($form);
+}
+
+/**
+ * Implements hook_form_alter.
+ */
+function folwell_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'layout_builder_discard_changes' || $form_id === 'layout_builder_revert_overrides') {
+    _folwell_form_button_styling($form);
+  }
+}
+
+function _folwell_form_button_styling(&$form) {
+  foreach (['submit', 'discard_changes', 'revert', 'cancel'] as $action) {
+    if (!array_key_exists($action, $form['actions'])) {
+      continue;
+    }
+    $attributes = array_key_exists(
+      '#attributes',
+      $form['actions'][$action]
+    ) ? $form['actions'][$action]['#attributes'] : [];
     $attributes['class'][] = 'btn';
     $attributes['class'][] = 'bg-maroon';
     $form['actions'][$action]['#attributes'] = $attributes;
