@@ -161,7 +161,9 @@ function folwell_form_node_layout_builder_form_alter(&$form, FormStateInterface 
  * Implements hook_form_alter.
  */
 function folwell_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id === 'layout_builder_discard_changes' || $form_id === 'layout_builder_revert_overrides') {
+  if ($form_id === 'layout_builder_discard_changes' ||
+      $form_id === 'layout_builder_revert_overrides' ||
+      $form_id === 'layout_builder_add_block') {
     _folwell_form_button_styling($form);
   }
 }
