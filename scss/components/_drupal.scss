@@ -61,3 +61,19 @@
     margin: 0;
   }
 }
+
+[class*='radix-layouts'] > .layout-builder__region {
+  margin-top: 2px;
+}
+
+#drupal-off-canvas {
+  summary,
+  details,
+  a {
+    font-family: $font-stack-open-sans;
+  }
+
+  .inline-block-create-button {
+    color: $layout-builder-blue;
+  }
+}

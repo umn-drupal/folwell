@@ -45,6 +45,8 @@ $folwell-dark-palette: (
   gray-medium:  #777677,
 );
 
+$layout-builder-blue: #85bef4;
+
 $link-hover: transparentize(map-get($folwell-dark-palette, gray-darker), 0.85);
 .jim-look-here {
   color: $link-hover;
