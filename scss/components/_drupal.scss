@@ -54,3 +54,10 @@
 .views_row {
   @include clearfix;
 }
+
+// Fix paragraphs buttons in layout builder modal
+#layout-builder-modal {
+  .dropbutton-action input {
+    margin: 0;
+  }
+}
