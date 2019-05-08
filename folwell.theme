@@ -163,7 +163,8 @@ function folwell_form_node_layout_builder_form_alter(&$form, FormStateInterface 
 function folwell_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'layout_builder_discard_changes' ||
       $form_id === 'layout_builder_revert_overrides' ||
-      $form_id === 'layout_builder_add_block') {
+      $form_id === 'layout_builder_add_block' ||
+      $form_id === 'layout_builder_update_block') {
     _folwell_form_button_styling($form);
   }
 }
