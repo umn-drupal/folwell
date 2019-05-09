@@ -79,3 +79,12 @@
     color: $layout-builder-blue;
   }
 }
+
+.ui-dialog {
+  .button {
+    @extend .bg-maroon;
+  }
+  table {
+    width: 100%;
+  }
+}
