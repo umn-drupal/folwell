@@ -27,12 +27,16 @@ $campuses: (
 $dtd-opts: (
   dtd: (
     height: 29px,
+    /* SVG wdmk only has single wordmark
     background-position: 0 -38px,
+    */
     width: 246px
   ),
   no-dtd: (
     height: 30px,
+    /* SVG wdmk only has single wordmark
     background-position: 0 -37px,
+    */
     width: 250px
   )
 );
@@ -153,14 +157,14 @@ $colors: (
             }
           }
           background: transparent
-            url("../images/branding/wordmarks/#{map-get($campus, class)}-#{$dtd}-#{$color}.png")
+            url("../images/branding/wordmarks/#{map-get($campus, class)}-#{$dtd}-#{$color}.svg")
             0
             0
             no-repeat;
           @media only screen and (-webkit-min-device-pixel-ratio: 1.25),
             (min-resolution: 192dpi) {
             background: transparent
-              url("../images/branding/wordmarks/#{map-get($campus, class)}-#{$dtd}-#{$color}@2x.png")
+              url("../images/branding/wordmarks/#{map-get($campus, class)}-#{$dtd}-#{$color}.svg")
               0 0 no-repeat;
             @if $dtd == "no-dtd" {
               background-size: 288px auto;
@@ -179,12 +183,16 @@ $colors: (
             }
           }
           @media screen and (max-width: 609px) {
+            /* SVG wdmk only has single wordmark
             background-position: 0 -38px;
+            */
             height: 30px;
             @if (map-get($campus, class) == "umnhf-campus-c") {
               @media only screen and (-webkit-min-device-pixel-ratio: 1.25),
                 (min-resolution: 192dpi) {
+                /* SVG wdmk only has single wordmark
                 background-position: 0 -39px;
+                */
               }
             }
           }
@@ -311,7 +319,7 @@ $colors: (
   @each $color, $cdetail in $colors {
     #mandatory-header-wrapper.umnhf-campus-m.#{map-get($cdetail, class)}
       #umnhf-h-wm {
-      background-image: url("../images/branding/wordmarks/umnhf-campus-m-no-dtd-#{$color}.png") !important;
+      background-image: url("../images/branding/wordmarks/umnhf-campus-m-no-dtd-#{$color}.svg") !important;
       height: 37px !important;
     }
   }
