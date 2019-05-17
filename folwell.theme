@@ -14,6 +14,8 @@ use Drupal\Core\Form\FormStateInterface;
  * @param array $variables
  */
 function folwell_preprocess_html(&$variables) {
+  // Inherited from Neato - sets main content classes depending on whether
+  // sidebar regions are actually populated.
   if (!empty($variables['page']['sidebar_first'])) {
     $sidebar_left = $variables['page']['sidebar_first'];
   }
@@ -84,6 +86,7 @@ function folwell_preprocess_html(&$variables) {
   ];
   $variables['umn_header_classes'] = implode(' ', $header_class_array);
 
+  // Render GCSE search block - theme requires presence of umn_search module.
   $block_manager = \Drupal::service('plugin.manager.block');
   $search_block_instance = $block_manager->createInstance('umn_search_block', array());
   $block_output = $search_block_instance->build();
@@ -97,7 +100,7 @@ function folwell_preprocess_html(&$variables) {
  * @param array $variables
  */
 function folwell_preprocess_page(&$variables) {
-
+  // Create site identity block and prefix identity theme region with the block.
   $site_name = Drupal::configFactory()->get('system.site')->get('name');
 
   $variables['linked_site_name'] = [
@@ -131,6 +134,8 @@ function folwell_preprocess_page(&$variables) {
  * @param array $variables
  */
 function folwell_preprocess_page_title(&$variables) {
+  // Page title field will be h1 except where page is home page, in which point
+  // it's the site identity, so this is passed to the template to determine tag.
   $variables['is_home_page'] = Drupal::service('path.matcher')->isFrontPage();
 }
 
@@ -170,6 +175,10 @@ function folwell_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 }
 
 function _folwell_form_button_styling(&$form) {
+  // Since field widgets in layout builder use Drupal admin classes for
+  // controls, apply Fowlell classes to those controls here.
+  // @todo determine whether this route or extending the .button class in the
+  // main theme stylesheet is the most comprehensive route going forward.
   foreach (['submit', 'discard_changes', 'revert', 'cancel'] as $action) {
     if (!array_key_exists($action, $form['actions'])) {
       continue;
