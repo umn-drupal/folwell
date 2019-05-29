@@ -47,11 +47,9 @@ caption {
 
 .photo-credit {
   display: block;
-  font-size: .7em;
   color: map-get($folwell-dark-palette, gray-medium);
   margin: .6em 0 1em;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  @extend %small-caps;
 }
 
 .img-circle {

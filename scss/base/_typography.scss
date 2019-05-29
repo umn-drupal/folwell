@@ -288,3 +288,9 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+%small-caps {
+  font-size: .7em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

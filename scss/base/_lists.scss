@@ -70,3 +70,18 @@ main,
     }
   }
 }
+
+.flex-display-list {
+  display: flex;
+  background-color: map-get($folwell-palette, gray-lighter);
+
+  .flex-display-list-item {
+    @extend %small-caps;
+    align-items: center;
+    margin: .65em 0 .65em 1em;
+
+    &:last-of-type {
+      margin-right: 1em;
+    }
+  }
+}
