@@ -22,24 +22,10 @@ function folwell_form_system_theme_settings_alter(&$form, FormStateInterface &$f
   $form['theme_settings']['#open'] = FALSE;
   $form['favicon']['#open'] = FALSE;
   $form['favicon']['default_favicon']['#default_value'] = theme_get_setting('favicon.use_default');
-  $form['page_options'] = [
-    '#type' => 'details',
-    '#title' => t('Page options'),
-    '#open' => FALSE,
-  ];
-  $form['page_options']['page_width'] = [
-    '#type' => 'radios',
-    '#title' => t('Page width'),
-    '#default_value' => theme_get_setting('page_width'),
-    '#options' => [
-      'fixed-width' => 'Fixed width (1200px)',
-      'full-width' => 'Full width (100%)'
-    ]
-  ];
   $form['header_options'] = [
     '#type' => 'details',
     '#title' => t('Header options'),
-    '#open' => TRUE,
+    '#open' => FALSE,
   ];
   $form['header_options']['campus_select'] = [
     '#type' => 'radios',
@@ -101,6 +87,20 @@ function folwell_form_system_theme_settings_alter(&$form, FormStateInterface &$f
     '#default_value' => theme_get_setting('mobile_search'),
     '#title' => t('Mobile search box setting'),
     '#description' => t('Configure how search appears on small screens - expandable with a dropdown button, or always visible'),
+  ];
+  $form['page_options'] = [
+    '#type' => 'details',
+    '#title' => t('Page options'),
+    '#open' => TRUE,
+  ];
+  $form['page_options']['page_width'] = [
+    '#type' => 'radios',
+    '#title' => t('Page width'),
+    '#default_value' => theme_get_setting('page_width'),
+    '#options' => [
+      'fixed-width' => 'Fixed width (1200px)',
+      'full-width' => 'Full width (100%)'
+    ]
   ];
   $form['site_identity'] = [
     '#type' => 'details',
