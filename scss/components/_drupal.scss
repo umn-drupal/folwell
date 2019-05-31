@@ -80,7 +80,8 @@
   }
 }
 
-.ui-dialog {
+.ui-dialog,
+[class*="layout-builder-form"] {
   .button {
     @extend .bg-maroon;
   }
