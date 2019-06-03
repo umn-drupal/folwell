@@ -33,7 +33,7 @@ gulp.task("sass", function() {
     .pipe(
       sass({
         noCache: true,
-        outputStyle: "compressed",
+        outputStyle: "compact",
         lineNumbers: false,
         includePaths: [bourbon, neat],
         loadPath: "./css/*",
