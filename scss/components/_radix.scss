@@ -5,6 +5,7 @@
     .col-md-#{$i} {
       position: relative;
       min-height: 1px;
+      @include grid-column(12);
       @include breakpoint($medium-screen) {
         @include grid-column($i);
       }
