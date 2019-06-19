@@ -12,7 +12,8 @@ const gulp = require("gulp"),
   replace = require("gulp-replace"),
   bourbon = require("bourbon").includePaths,
   neat = require("bourbon-neat").includePaths,
-  autoprefixer = require("gulp-autoprefixer");
+  autoprefixer = require("autoprefixer"),
+  postcss = require("gulp-postcss");
 
 // Only include config if exists.
 let config;
@@ -44,7 +45,7 @@ gulp.task("sass", function() {
       gutil.log(error);
       this.emit("end");
     })
-    .pipe(autoprefixer())
+    .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write("./maps"))
     .pipe(gulp.dest("./css"))
     .pipe(
@@ -158,26 +159,6 @@ gulp.task("watch", function() {
   if (!config.twig.useCache) {
     gulp.watch(["templates/**/*.html.twig"], ["flush"]);
   }
-});
-
-// Copy Bitters to the subtheme folder.
-gulp.task("bitters-copy", function() {
-  gulp
-    .src(["node_modules/bourbon-bitters/app/assets/stylesheets/**/*"])
-    .pipe(gulp.dest("scss/base", { overwrite: false }));
-});
-
-// Fix Bitters Neat import.
-gulp.task("bitters-fix", function() {
-  gulp
-    .src(["scss/base/_grid-settings.scss"])
-    .pipe(
-      replace(
-        '@import "neat-helpers";',
-        '@import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat-helpers";'
-      )
-    )
-    .pipe(gulp.dest("scss/base/"));
 });
 
 gulp.task("default", ["watch", "browser-sync"]);
