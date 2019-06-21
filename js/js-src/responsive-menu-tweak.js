@@ -10,6 +10,8 @@
         navbar.append(wordmark).append(closeButton);
         navbar.addClass("wordmarked");
       }
+      $(".mm-tabstart").attr("aria-label", "tab start button");
+      $(".mm-tabend").attr("aria-label", "tab end button");
     }
   };
 })(Drupal, jQuery);
