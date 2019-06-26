@@ -86,37 +86,23 @@ main,
   }
 }
 
-.link-list {
+ul.link-list {
   list-style: none;
   padding: .85em;
-  max-width: 25em;
+  a {
+    color: map-get($folwell-dark-palette, gray-darker);
+    padding: .75em 1em;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    border-bottom: none;
+    &:hover {
+      color: map-get($folwell-dark-palette, maroon);
+    }
+  }
   li {
-    border-top: 1px solid $gray-light;
     padding: 0;
-    &:last-child {
-      border-bottom: 1px solid $gray-light;
-    }
-    a {
-      color: $gray-darker;
-      padding: .75em 1.5em .75em .75em;
-      text-decoration: none;
-      display: block;
-      position: relative;
-      border-bottom: none;
-      &:after {
-        font-family: 'FontAwesome';
-        color: $maroon;
-        content: "\f054";
-        display: block;
-        position: absolute;
-        right: .6em;
-        top: 50%;
-        margin-top: -.6em;
-        font-size: .8em;
-      }
-      &:hover {
-        color: $maroon;
-      }
-    }
+    background: map-get($folwell-palette, gray-lighter);
+    border-bottom: 3px solid white;
   }
 }
