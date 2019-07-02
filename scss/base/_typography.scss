@@ -289,6 +289,16 @@ picture {
   max-width: 100%;
 }
 
+%caption-color {
+  color: map-get($folwell-dark-palette, gray-medium);
+}
+
+%caption-type {
+  @extend %caption-color;
+  font-size: .85em;
+  font-style: italic;
+}
+
 %small-caps {
   font-size: .7em;
   text-transform: uppercase;

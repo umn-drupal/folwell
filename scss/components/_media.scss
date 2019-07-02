@@ -2,6 +2,10 @@
 figure {
   margin: 0;
 
+  &.caption {
+    display: block;
+  }
+
   article {
     margin: 0;
 
@@ -21,9 +25,7 @@ picture {
 figcaption,
 .txt-caption,
 cite {
-  font-size: .85em;
-  color: map-get($folwell-dark-palette, gray-medium);
-  font-style: italic;
+  @extend %caption-type;
   margin: 1.2em 1.2em 1.7em 0;
 
   p {
@@ -38,18 +40,16 @@ cite {
 }
 
 caption {
-  font-size: .85em;
-  color: map-get($folwell-dark-palette, gray-medium);
-  font-style: italic;
+  @extend %caption-type;
   margin: 0 1.2em 1em 0;
   text-align: left;
 }
 
 .photo-credit {
   display: block;
-  color: map-get($folwell-dark-palette, gray-medium);
   margin: .6em 0 1em;
   @extend %small-caps;
+  @extend %caption-color;
 }
 
 .img-circle {
