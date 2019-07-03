@@ -105,6 +105,7 @@ p.prefix-name {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  align-items: center;
 
   > div,
   > section,
@@ -112,6 +113,10 @@ p.prefix-name {
   > aside,
   > nav {
     margin: 0 1em 0 0;
+  }
+
+  .block p {
+    margin-bottom: 0;
   }
 
   @include breakpoint($large-screen) {
