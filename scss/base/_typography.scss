@@ -304,3 +304,10 @@ picture {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
+.embedded-entity article a {
+  border-bottom: none;
+  &:hover, &:focus {
+    background-color : transparent;
+  }
+}
