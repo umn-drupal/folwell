@@ -167,12 +167,10 @@ $colors: (
               url("../images/branding/wordmarks/#{map-get($campus, class)}-#{$dtd}-#{$color}.svg")
               0 0 no-repeat;
             @if $dtd == "no-dtd" {
-              background-size: 288px auto;
               @if (map-get($campus, class) == "umnhf-campus-tc") {
                 height: 34px;
               }
             } @else {
-              background-size: map-get($campus, width) auto;
               @if (map-get($campus, class) == "umnhf-campus-e") or
                 (map-get($campus, class) == "umnhf-campus-m")
               {
