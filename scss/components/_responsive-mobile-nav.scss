@@ -111,6 +111,12 @@ a.mm-title {
     bottom: 0;
     z-index: 2;
     @include standard-border($placement: left);
+
+    // Fix nolink items hidden in mobile menu.
+    #off-canvas &.mm-fullsubopen,
+    #off-canvas &.mm-fullsubopen:hover {
+      background: transparent;
+    }
   }
 
   .mm-panels > .mm-panel > &:first-child,
@@ -259,4 +265,8 @@ img#mobile-nav-m {
 // Hide footer when mobile menu is open
 .mm-opened .umnhf {
   display: none;
+}
+
+.mm-listview > .menu-item--expanded > span {
+  color: map-get($folwell-dark-palette, gray-darker);
 }
