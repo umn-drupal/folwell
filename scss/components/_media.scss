@@ -4,6 +4,10 @@ figure {
 
   &.caption {
     display: block;
+    
+    figcaption {
+      display: block;
+    }
   }
 
   article {
