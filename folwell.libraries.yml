@@ -22,3 +22,7 @@ fontawesome:
   css:
     theme:
       'https://use.fontawesome.com/releases/v5.5.0/css/all.css': { type: external, minified: true }
+vertical_nav:
+  version: VERSION
+  js:
+    'js/vertical-nav.js': {}

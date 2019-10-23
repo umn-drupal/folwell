@@ -127,7 +127,7 @@ ul.sf-menu {
     box-shadow: 3px 10px 10px -1px transparentize(map-get($folwell-palette, sf-shadow), .3);
 
     li {
-      top: 8px;    
+      top: 8px;
       width: 100%;
 
       a,
@@ -160,7 +160,7 @@ span.nolink.sf-depth-1 {
   li.active-trail & {
     background: transparentize(map-get($folwell-palette, gray-light), .4);
     color: map-get($folwell-dark-palette, gray-darker);
-    font-weight: 700;  
+    font-weight: 700;
   }
 
   li.active-trail &:hover{
@@ -253,7 +253,7 @@ ul.sf-menu {
     display: block;
     flex-grow: 1;
     flex-wrap: wrap;
-    justify-content: space-between;  
+    justify-content: space-between;
     margin: 0;
     padding: 0;
   }
@@ -552,81 +552,4 @@ ul.sf-menu.rtl {
   &.sf-accordion li.sf-expanded > ul {
     right: auto !important;
   }
-}
-
-//superfish vertical nav
-ul.menu.sf-menu.sf-vertical,
-ul.menu.sf-menu.sf-accordion,
-ul.menu.sf-menu.sf-accordion.vertical-nav{
-  z-index:1;
-  width:100%;
-  margin-bottom:1.5em;
-  //establish indentation
-  li{
-    padding:0;
-    top:0;
-    z-index:1;
-    >ul{
-      padding-left:1.2em;
-      z-index:1;
-      li{
-        top:0;
-        z-index:1;
-      }
-    }
-  }
-  li a{
-    background:none;
-    text-align:left;
-    font-size:18px;
-    border-bottom:solid 1px map-get($folwell-palette, gray-lighter);
-    padding:.25em;
-    color:map-get($folwell-dark-palette, gray-darker);
-    font-weight:300;
-    &:hover{
-      background:$link-hover;
-    }
-  }
-  //add down arrow to li with submenus
-  li.menuparent >a{
-    &:before{
-      @include font-awesome;
-      content: "\f107";
-      color: map-get($folwell-dark-palette, gray-darker);
-      position: absolute;
-      right: 1em;
-    }
-  }
-  //highlight expanded submenu
-  li.active-trail.menuparent.sf-expanded{
-    >a.is-active{
-      background:map-get($folwell-palette, gray-light);
-      font-weight:500;
-      border-bottom:solid 1px map-get($folwell-dark-palette, maroon);
-      &:after{
-        left:0;
-        bottom:-13px;
-        position:absolute;
-      }
-    }
-  }
-}
-.active-vertical {
-  border-left: $accent-border;
-  font-weight: 600 !important;
-  color: map-get($folwell-dark-palette, maroon-light) !important;
-}
-nav#vertical-nav {
-    margin-top: 30px;
-}
-div#block-verticalnav {
-    width: 30%;
-    a.sf-depth-1.menuparent {
-        font-weight: 600;
-        color: #7a0019;
-    }
-}
-ul#superfish-vertical-nav-accordion {
-    background: #f9f7f6;
-    padding: 0 1em;
 }

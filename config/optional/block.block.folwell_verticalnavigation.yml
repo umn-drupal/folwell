@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - menu_block
+    - system
+  theme:
+    - folwell
+id: folwell_verticalnavigation
+theme: folwell
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'menu_block:main'
+settings:
+  id: 'menu_block:main'
+  label: 'Main navigation'
+  provider: menu_block
+  label_display: visible
+  follow: 1
+  follow_parent: active
+  level: 1
+  depth: 3
+  expand: true
+  parent: 'main:'
+  suggestion: folwell_vertical_nav
+  label_type: parent
+  label_link: 1
+visibility:
+  request_path:
+    id: request_path
+    pages: '*'
+    negate: false
+    context_mapping: {  }
