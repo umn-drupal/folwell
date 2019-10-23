@@ -99,6 +99,23 @@ p > .btn-give {
   &:hover {
     background-color: transparentize(map-get($folwell-dark-palette, gray-darker), .85);
   }
+
+  &.white-outline {
+    background-color: transparent;
+    @include standard-border(map-get($folwell-palette, white), all);
+    color: map-get($folwell-palette, white);
+    &:hover {
+      background-color: map-get($folwell-dark-palette, maroon-light);
+    }
+  }
+
+  &.gray-outline {
+    background-color: transparent;
+    @include standard-border(map-get($folwell-dark-palette, gray-darker), all);
+    &:hover {
+      background-color: map-get($folwell-dark-palette, gold);
+    }
+  }
 }
 
 .btn-arrow:after,

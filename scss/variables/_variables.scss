@@ -122,8 +122,8 @@ $max-width: 1200px;
   }
 }
 
-@mixin font-awesome($font-size: inherit) {
+@mixin font-awesome($font-size: inherit, $font-weight: 900) {
   font-family: 'Font Awesome 5 Free';
   font-size: $font-size;
-  font-weight: 900;
+  font-weight: $font-weight;
 }

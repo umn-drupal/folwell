@@ -1,73 +1,108 @@
-//Vertical nav: Folwell Theme Component
-
-//drupal default menus
-//found within the content region
-//usually a sidebar
-div#body-wrapper nav{
-  ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-    width:100%;
-    background: map-get($folwell-palette, off-white);
-    //establish indentation
-    li{
-      padding:0;
-      >ul{
-        padding-left:1.2em;
+main nav,
+.folwell-vertical-nav {
+  padding: 1em;
+  background-color: map-get($folwell-palette, off-white);
+  ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 1.5em;
+    max-width: 100%;
+    background: map-get($folwell-palette, off_white);
+    > li {
+      padding: 0;
+    }
+    a,
+    span {
+      font-size: .833em;
+      color: $base-font-color;
+      display: block;
+      border-bottom: none;
+      padding: .5em;
+      position: relative;
+    }
+    a,
+    .expand-slug {
+      &:hover {
+        color: map-get($folwell-dark-palette, maroon);
+        background-color: map-get($folwell-palette, gray-lighter);
+      }
+      &:focus {
+        background: transparent;
       }
     }
-    a{
-      //basic menu link styles
-      text-decoration:none;
-      display:block;
-      border-bottom:solid 1px map-get($folwell-palette, off-white);
-      padding:.5em;
-      color:map-get($folwell-dark-palette, gray-darker);
-      position:relative;
-      font-size:.833em;
-      &:hover{
-        color:map-get($folwell-dark-palette, maroon);
-        background:map-get($folwell-palette, gray-lighter);
-      }
+    a.is-active {
+      background: map-get($folwell-palette, gray-light);
+      color: $base-font-color;
+      font-weight: 700;
     }
+  }
+  &.no-label ul {
+    margin-left: 0;
+  }
+  .menu-item--expanded,
+  .menu-item--collapsed {
+    list-style-type: none;
+    list-style-image: none;
+  }
 
-    //highlight expanded submenu
-    li._item-active-trail{
-      >a.is-active{
-        font-weight:600;
-      //  border-bottom:solid 1px map-get($folwell-dark-palette, maroon);
-        color:map-get($folwell-dark-palette, maroon);
-        &:after{
-          left:0;
-          bottom:-14px;
-          position:absolute;
-        }
+  .vertical-nav-js {
+    .menu-item--expanded > ul,
+    .menu-item--expanded.menu-closed > ul {
+      display: none;
+    }
+    //.menu-item--expanded.menu-opened > ul {
+    //  display: block;
+    //}
+  }
+
+  .menu-label {
+    span, a {
+      font-size: .833em;
+      display: block;
+      border-bottom: none;
+      padding: .5em;
+      position: relative;
+
+    }
+    a {
+      color: map-get($folwell-dark-palette, maroon);
+      font-weight: 600;
+      &:before {
+        @include font-awesome($font-weight: 600);
+        content: "\f053";
+        margin-right: .5em;
       }
     }
   }
-}
-div#body-wrapper{
-  div{
-    .sf-accordion-toggle{
-      >a{
-        background:transparent;
-        display:inline-block;
-        margin:.5em 0;
-        padding:.5em;
-        position:relative;
-        border:1px map-get($folwell-dark-palette, maroon) solid;
-        font-size:.85em;
-        font-weight:400;
-        &:hover{
-          background:$link-hover;
-        }
-        &:before{
-          @include font-awesome;
-          content:'\f0c9';
-          margin-right:.5em;
-        }
+
+  .menu-item--expanded {
+    display: flex;
+    flex-wrap: wrap;
+    > a, > span {
+      margin-right: auto;
+      flex-grow: 1;
+    }
+    .expand-slug {
+      padding: 0 12px;
+      margin: 0;
+      background-color: transparent;
+      &:after {
+        @include font-awesome($font-weight: 600);
+        content: "\f107";
+        line-height: 1;
+        text-indent: 0;
       }
+    }
+    .is-active ~ button {
+      background: map-get($folwell-palette, gray-light);
+      color: $base-font-color;
+    }
+    ul {width: 100%;}
+  }
+  .menu-item--active-trail {
+    .expand-slug:hover {
+      background-color: darken(map-get($folwell-palette, gray-light), 10%);
+      color: map-get($folwell-dark-palette, maroon);
     }
   }
 }

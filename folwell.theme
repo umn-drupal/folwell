@@ -5,6 +5,9 @@
  * Functions to support theming in the folwell theme.
  */
 
+use Drupal\Core\GeneratedLink;
+use Drupal\Core\Link;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Url;
 use Drupal\Core\Form\FormStateInterface;
 
@@ -191,4 +194,54 @@ function _folwell_form_button_styling(&$form) {
     $attributes['class'][] = 'bg-maroon';
     $form['actions'][$action]['#attributes'] = $attributes;
   }
+}
+
+function folwell_preprocess_block__menu_block(&$variables) {
+  if ($variables['configuration']['suggestion'] === 'folwell_vertical_nav') {
+    $menu = \Drupal::entityTypeManager()->getStorage('menu')->load($variables['derivative_plugin_id']);
+    $variables['menu_name'] = $menu->label();
+    $is_home = Drupal::service('path.matcher')->isFrontPage();
+    if ($is_home) {
+      $variables['configuration']['label'] = null;
+    } else {
+      $menu_tree = Drupal::menuTree();
+      $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($variables['derivative_plugin_id']);
+      $active_trail = $parameters->activeTrail;
+      if (count($active_trail) <= 2) {
+        $trimmed_trail = array_filter($active_trail, function($x) {return !empty($x);});
+        if (empty($trimmed_trail)) {
+          // We're above the context of this menu
+          $variables['configuration']['label'] = null;
+        } else if (count($trimmed_trail) === 1) {
+          // We'll put a link to home here. In some contexts (e.g. microsite) we'll
+          // want to link to that instead, but we'll cross that bridge when I get to it
+          $home_link = Link::createFromRoute('Home', '<front>')->toString();
+          $variables['configuration']['label'] = $home_link;
+        }
+      }
+    }
+  }
+}
+
+function folwell_preprocess_menu(&$variables) {
+  if (!empty($variables['menu_block_configuration']) && $variables['menu_block_configuration']['suggestion'] = 'folwell_vertical_nav') {
+    $menu_attrs = !empty($variables['attributes']) ? $variables['attributes'] : [];
+    $classes = array_key_exists(
+      'classes',
+      $menu_attrs
+    ) ? $menu_attrs['class'] : [];
+    $classes[] = 'vertical-nav-js';
+    $menu_attrs['class'] = $classes;
+    $variables['attributes'] = $menu_attrs;
+    $attaches = !empty($variables['#attached']) ? $variables['#attached'] : [];
+    $libraries = array_key_exists(
+      'library',
+      $attaches
+    ) ? $attaches['library'] : [];
+    $libraries[] = 'folwell/vertical_nav';
+    $attaches['library'] = $libraries;
+    $variables['#attached'] = $attaches;
+
+  }
+
 }
