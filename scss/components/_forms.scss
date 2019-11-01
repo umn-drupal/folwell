@@ -1,0 +1,250 @@
+@include breakpoint(max-width $medium-screen) {
+  fieldset.webform-composite-hidden-title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: contents;
+  }
+}
+
+form {
+  margin: 1em;
+}
+input.form-color.form-color-medium {
+  margin-right: 0.5em;
+  margin-top: 0;
+}
+input#edit-search {
+  box-sizing: border-box;
+}
+
+details,
+select,
+.select2-container--default .select2-selection--single {
+  @include standard-border(
+    transparentize(map-get($folwell-dark-palette, gray-dark), 0.5),
+    all
+  ); //important
+}
+
+.form-item .description {
+  font-size: 0.85em;
+  font-style: italic;
+  color: map-get($folwell-dark-palette, gray-medium);
+}
+
+[type="color"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="email"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"],
+input:not([type]),
+textarea,
+select[multiple] {
+  @include standard-border(
+    transparentize(map-get($folwell-dark-palette, gray-dark), 0.5),
+    all
+  );
+}
+.status-messages {
+  .status {
+    background-color: transparentize(
+      map-get($folwell-dark-palette, green),
+      0.75
+    );
+    &::before {
+      content: "\f058";
+    }
+  }
+  .warning {
+    background-color: transparentize(map-get($folwell-palette, gold), 0.5);
+    &::before {
+      content: "\f06a";
+    }
+  }
+  .error,
+  .form-item--error-message {
+    background-color: transparentize(
+      map-get($folwell-dark-palette, maroon-light),
+      0.75
+    );
+    &::before {
+      content: "\f057";
+    }
+    a {
+      color: map-get($folwell-dark-palette, maroon-dark);
+      text-decoration: none;
+      transition: all 400ms ease-in-out;
+      @include standard-border(map-get($folwell-dark-palette, maroon-dark));
+    }
+  }
+  .status,
+  .warning,
+  .error,
+  .form-item--error-message {
+    color: map-get($folwell-dark-palette, gray-darker); // !important;
+    position: relative;
+    &::before {
+      @include font-awesome($font-weight: 600);
+      line-height: 1;
+      position: absolute;
+      text-indent: 0;
+      margin-top: 0.3em;
+      margin-left: 0.8em;
+      left: 0.5em;
+    }
+  }
+}
+.page table {
+  .js-form-type-checkbox {
+    margin-left: -0.5em;
+  }
+}
+.tableselect {
+  th,
+  td {
+    padding-left: 1.5em;
+  }
+  th.select-all input.form-checkbox {
+    margin-left: -0.5em;
+  }
+}
+.webform-tableselect input.form-checkbox,
+.webform-likert-table input.form-radio {
+  border: 2px solid map-get($folwell-dark-palette, gray-darker);
+}
+.webform-tableselect-sort th.select-all input.form-checkbox {
+  margin-left: 0.85em;
+}
+
+.webform-progress-tracker {
+  .progress-step.is-active .progress-marker {
+    background-color: map-get($folwell-palette, gold-light);
+    font-weight: 700;
+  }
+  .progress-step.is-active:hover .progress-marker,
+  .progress-step.is-complete:hover .progress-marker {
+    background-color: map-get($folwell-palette, gold-light);
+  }
+  .progress-title[role="link"] {
+    color: map-get($folwell-dark-palette, maroon-light);
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    @include standard-border(map-get($folwell-dark-palette, maroon-light));
+    &:hover {
+      color: map-get($folwell-dark-palette, maroon-light);
+      background-color: transparentize(
+        map-get($folwell-dark-palette, gray-darker),
+        0.85
+      );
+    }
+    &:focus {
+      background-color: map-get($folwell-palette, gold-header);
+    }
+  }
+}
+
+span.progress-marker {
+  width: 2.4em;
+  height: 2.4em;
+}
+.progress-step .progress-marker {
+  color: map-get($folwell-dark-palette, gray-darker);
+}
+.webform-progress-tracker .progress-step:not(.is-active) .progress-marker,
+.webform-progress-tracker .progress-step:hover .progress-marker {
+  background-color: map-get($folwell-palette, gray-light);
+}
+.webform-progress-tracker .progress-step::after {
+  background-color: map-get($folwell-palette, gray-light);
+  margin-top: 0.7em;
+}
+.webform-progress__status {
+  font-size: 0.85em;
+  font-style: italic;
+  color: map-get($folwell-dark-palette, gray-medium);
+}
+.webform-signature-pad {
+  background-color: map-get($folwell-palette, gray-lighter);
+}
+input#edit-submit {
+  background-color: map-get($folwell-dark-palette, maroon);
+  color: map-get($folwell-palette, white);
+  cursor: pointer;
+  &:hover {
+    background-color: map-get($folwell-dark-palette, maroon-light);
+  }
+}
+
+//Custom messages for Folwell prod only.
+//div[aria-label="Error message"], div[aria-label="Warning message"], div[aria-label="Status message"] {
+//  border: none;
+//  display: block;
+//  margin-top: .75em;
+//  margin-bottom: .75em;
+//  padding: .75em .75em .75em 2.8em;
+//  position: relative;
+//  &:before {
+//    font-family: Font Awesome\ 5 Free;
+//    font-size: inherit;
+//    font-weight: 600;
+//    line-height: 1;
+//    position: absolute;
+//    text-indent: 0;
+//    margin-top: .3em;
+//    margin-left: .8em;
+//    left: .5em;
+//  }
+//}
+//div[aria-label="Error message"] {
+//  background-color: rgba(144,0,33,.25);
+//  &:before {
+//    content: "\f057";
+//  }
+//}
+//div[aria-label="Warning message"] {
+//  background-color: rgba(255,204,51,.5);
+//  &:before {
+//    content: "\f06a";
+//  }
+//}
+//div[aria-label="Status message"] {
+//  background-color: rgba(88,166,22,.25);
+//  &:before {
+//    content: "\f058";
+//  }
+//}
+//.form-item--error-message, fieldset[aria-invalid="true"] div.fieldset-wrapper>div:first-child {
+//  display: block;
+//  margin-top: .75em;
+//  margin-bottom: .75em;
+//  padding: .75em .75em .75em 2.8em;
+//  border-radius: 0;
+//  background-color: rgba(144,0,33,.25);
+//  position: relative;
+//  &:before {
+//    background: none;
+//    font-family: Font Awesome\ 5 Free;
+//    content: "\f057";
+//    font-size: inherit;
+//    font-weight: 600;
+//    line-height: 1;
+//    position: absolute;
+//    text-indent: 0;
+//    margin-top: .3em;
+//    margin-left: .8em;
+//    left: .5em;
+//  }
+//}
+//html.js .webform-message--close .webform-message__link {
+//  top: 0.8em;
+//}
