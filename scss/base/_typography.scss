@@ -24,15 +24,15 @@ h6 {
   margin: 0 0 $small-spacing;
   a,
   a:link {
-    color: map-get($folwell-dark-palette, gray-darker);
-    border-bottom: 0;
+    color: map-get($folwell-dark-palette, maroon-light);
+    border-bottom: none;
   }
 }
 
 h1,
 .style-h1 {
   font-size: 2.25em;
-  font-weight: 600;
+  font-weight: 400;
   margin: .833333333em 0 .555555556em;
   @include breakpoint($large-screen) {
     font-size: 2em;
@@ -42,82 +42,78 @@ h1,
 h2,
 .style-h2 {
   font-size: 2em;
-  font-weight: 700;
-  margin: 1.5625em 0 .78125em;
+  margin: 2em 0 .65em;
   @include breakpoint($large-screen) {
-    font-size: 1.777777778em;
-  }
-
-  &:first-child {
-    margin: .876875em 0 .78125em;
+    font-size: 1.666em;
   }
 }
 
 h3,
 .style-h3 {
   font-size: 1.5625em;
-  line-height: 1.512;
-  margin: 1.6em 0 1em;
+  margin: 1.75em 0 .833em;
   @include breakpoint($large-screen) {
-    font-size: 1.388888889em;
-  }
-
-  &:first-child {
-    margin-top: .88em;
-  }
-
-  h2+& {
-    margin-top: 1.2em;
+    font-size: 1.333em;
   }
 }
 
 h4,
 .style-h4 {
   font-size: 1.375em;
+  font-weight: 700;
   margin: 1.636363636em 0 .833333333em;
   @include breakpoint($large-screen) {
-    font-size: 1.222222222em;
-  }
-
-  h3 + & {
-    margin-top: 1.136363636em;
+    font-size: 1.111em;
   }
 }
 
-h4,
 h5 {
+  margin-bottom: 0;
+}
+
+h6 {
+  font-size: 0.888em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+h1.fancy {
+  font-size: 2.666em;
+  margin: .833em 0 .556em;
+}
+
+h2.fancy {
+  font-size: 2em;
+  margin: 2em 0 .65em;
+}
+
+h3.fancy {
+  font-size: 1.5em;
+  margin: 1.75em 0 .833em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   &:first-child {
     margin-top: 0;
   }
-}
 
-h5,
-h6,
-small {
-  font-size: 1.125em;
-  @include breakpoint($large-screen) {
-    font-size: 1em;
+  &.fancy {
+    font-weight: 400;
   }
 }
 
-h5,
-h6 {
-  font-weight: 700;
-}
-
-h5 {
-  line-height: 1.5;
-  margin: 1.666666667em 0 .833333333em;
-
-  h4+& {
-    margin-top: 1.388888889em;
-  }
-}
-
-h6,
-small {
-  line-height: $heading-line-height;
-  margin: 1.388888889em 0 0;
+h1 + h2,
+h2 + h3,
+h3 + h4,
+h4 + h5,
+h5 + h6 {
+  margin-top: 0;
 }
 
 p,
@@ -234,7 +230,7 @@ a {
       @include font-awesome(.8em);
       padding-left: .6em;
       content: "\f054";
-      color: map-get($folwell-dark-palette, gray-medium);  
+      color: map-get($folwell-dark-palette, gray-medium);
     }
 
     &:hover,
@@ -261,7 +257,7 @@ a {
     &:active {
       background-color: map-get($folwell-palette, gray-light);
     }
-  
+
   }
 }
 
