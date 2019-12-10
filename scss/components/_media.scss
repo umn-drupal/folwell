@@ -4,7 +4,7 @@ figure {
 
   &.caption {
     display: block;
-    
+
     figcaption {
       display: block;
     }
@@ -54,6 +54,11 @@ caption {
   margin: .6em 0 1em;
   @extend %small-caps;
   @extend %caption-color;
+
+  & + ul,
+  & + ol {
+    margin-top: 1em;
+  }
 }
 
 .img-circle {
