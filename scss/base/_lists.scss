@@ -22,7 +22,8 @@ main,
     }
   }
 
-  p + ul {
+  p + ul,
+  p + ol {
     margin-top: -1.1em;
   }
 
@@ -60,11 +61,11 @@ main,
   li {
     display: inline-block;
     padding: 0;
-  
+
     &::after {
       content: ',\00a0';
     }
-  
+
     &:last-child::after {
       content: '';
     }
