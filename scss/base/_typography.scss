@@ -33,7 +33,7 @@ h1,
 .style-h1 {
   font-size: 1.5em;
   font-weight: 400;
-  margin: .833333333em 0 .555555556em;
+  margin: 0.833333333em 0 0.555555556em;
   @include breakpoint($large-screen) {
     font-size: 2em;
   }
@@ -42,18 +42,24 @@ h1,
 h2,
 .style-h2 {
   font-size: 1.4375em;
-  margin: 2em 0 .65em;
+  margin: 2em 0 0.65em;
   @include breakpoint($large-screen) {
     font-size: 1.666em;
+  }
+  &:first-child {
+    margin: 0.876875em 0 0.78125em;
   }
 }
 
 h3,
 .style-h3 {
   font-size: 1.27em;
-  margin: 1.75em 0 .833em;
+  margin: 1.75em 0 0.833em;
   @include breakpoint($large-screen) {
     font-size: 1.333em;
+  }
+  &:first-child {
+    margin-top: 0.88em;
   }
 }
 
@@ -61,7 +67,7 @@ h4,
 .style-h4 {
   font-size: 1.111em;
   font-weight: 700;
-  margin: 1.636363636em 0 .833333333em;
+  margin: 1.636363636em 0 0.833333333em;
   @include breakpoint($large-screen) {
     font-size: 1.111em;
   }
@@ -81,36 +87,39 @@ h6 {
   font-size: 0.888em;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
 
 h1.fancy {
   font-size: 2.666em;
-  margin: .833em 0 .556em;
+  margin: 0.833em 0 0.556em;
 }
 
 h2.fancy {
   font-size: 2em;
-  margin: 2em 0 .65em;
+  margin: 2em 0 0.65em;
+  &:first-child {
+    margin: 0.876875em 0 0.78125em;
+  }
 }
 
 h3.fancy {
   font-size: 1.5em;
-  margin: 1.75em 0 .833em;
+  margin: 1.75em 0 0.833em;
+  &:first-child {
+    margin-top: 0.88em;
+  }
 }
 
-h1,
-h2,
-h3,
+.fancy {
+  font-weight: 400;
+}
+
 h4,
 h5,
 h6 {
   &:first-child {
     margin-top: 0;
-  }
-
-  &.fancy {
-    font-weight: 400;
   }
 }
 
@@ -242,11 +251,11 @@ a {
     transition: all $base-duration $base-timing;
     border-bottom: none;
     font-weight: 600;
-    padding: .2em;
+    padding: 0.2em;
 
     &::after {
-      @include font-awesome(.8em);
-      padding-left: .6em;
+      @include font-awesome(0.8em);
+      padding-left: 0.6em;
       content: "\f054";
       color: map-get($folwell-dark-palette, gray-medium);
     }
@@ -261,8 +270,8 @@ a {
       background-color: $link-hover;
 
       &::after {
-        @include font-awesome(.8em);
-        padding-left: .6em;
+        @include font-awesome(0.8em);
+        padding-left: 0.6em;
         content: "\f054";
         color: map-get($folwell-dark-palette, maroon);
       }
@@ -275,7 +284,6 @@ a {
     &:active {
       background-color: map-get($folwell-palette, gray-light);
     }
-
   }
 }
 
@@ -309,19 +317,20 @@ picture {
 
 %caption-type {
   @extend %caption-color;
-  font-size: .85em;
+  font-size: 0.85em;
   font-style: italic;
 }
 
 %small-caps {
-  font-size: .7em;
+  font-size: 0.7em;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .embedded-entity article a {
   border-bottom: none;
-  &:hover, &:focus {
-    background-color : transparent;
+  &:hover,
+  &:focus {
+    background-color: transparent;
   }
 }
