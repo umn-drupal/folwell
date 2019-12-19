@@ -17,7 +17,6 @@
   background-color: map-get($folwell-palette, gray-lighter);
 }
 
-
 .block-superfish {
   width: 100%;
 
@@ -27,7 +26,7 @@
 }
 
 .sf-megamenu {
-  display:none;
+  display: none;
 }
 //
 //div#fw-menu-wrapper {
@@ -67,15 +66,15 @@ div#header-wrapper {
     margin-left: auto;
     margin-right: auto;
 
-    ul.sf-menu li.sfHover>ul {
+    ul.sf-menu li.sfHover > ul {
       top: auto;
-      padding-bottom: .45em;
+      padding-bottom: 0.45em;
     }
   }
 }
 
-ul.sf-hidden>li {
-    display: none;
+ul.sf-hidden > li {
+  display: none;
 }
 
 .sf-hidden {
@@ -85,14 +84,14 @@ ul.sf-hidden>li {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px !important;
-  margin:  !important;
+  margin: !important;
   overflow: hidden !important;
   padding: 0 !important;
   width: 1px !important;
 }
 
 ul.sf-menu {
-  line-height: 1.0;
+  line-height: 1;
   list-style: none;
   margin: 1px 0 0;
   padding: 0;
@@ -124,7 +123,7 @@ ul.sf-menu {
     position: absolute;
     top: -9999px;
     width: 12em;
-    box-shadow: 3px 10px 10px -1px transparentize(map-get($folwell-palette, sf-shadow), .3);
+    box-shadow: 3px 10px 10px -1px transparentize(map-get($folwell-palette, sf-shadow), 0.3);
 
     li {
       top: 8px;
@@ -132,8 +131,8 @@ ul.sf-menu {
 
       a,
       span.nolink,
-      span[class*='sf-depth'] {
-        padding: .8em 0 .8em 1.2em;
+      span[class*="sf-depth"] {
+        padding: 0.8em 0 0.8em 1.2em;
         border-bottom: none;
       }
     }
@@ -158,12 +157,12 @@ span.nolink.sf-depth-1 {
   }
 
   li.active-trail & {
-    background: transparentize(map-get($folwell-palette, gray-light), .4);
+    background: transparentize(map-get($folwell-palette, gray-light), 0.4);
     color: map-get($folwell-dark-palette, gray-darker);
     font-weight: 700;
   }
 
-  li.active-trail &:hover{
+  li.active-trail &:hover {
     color: map-get($folwell-dark-palette, maroon);
   }
 
@@ -191,9 +190,12 @@ li.sf-depth-1 {
   }
 
   li a.is-active.#{$depth-class} {
+    background: map-get($folwell-palette, gray-light);
     color: map-get($folwell-dark-palette, gray-darker);
-    font-weight: 400;
-    border-left: $accent-border;
+    font-weight: 700;
+    &:hover {
+      color: map-get($folwell-dark-palette, maroon);
+    }
   }
 }
 
@@ -205,7 +207,7 @@ ul.sf-menu {
     color: map-get($folwell-dark-palette, gray-darker);
     display: block;
     font-family: $base-font-family;
-    font-size: .888888889em;
+    font-size: 0.888888889em;
     font-weight: 400;
     line-height: 1.35;
     padding: 1.2em;
@@ -320,8 +322,9 @@ ul.sf-menu {
   &.sf-vertical.sf-shadow ul,
   &.sf-navbar.sf-shadow ul ul {
     background: map-get($folwell-palette, off-white);
-    box-shadow: 0px 5px 5px 0 transparentize(map-get($folwell-palette, sf-shadow), .6);
-    padding: 0 0 .4em;
+    box-shadow: 0px 5px 5px 0
+      transparentize(map-get($folwell-palette, sf-shadow), 0.6);
+    padding: 0 0 0.4em;
   }
 
   &.sf-shadow ul.sf-shadow-off {
@@ -336,14 +339,14 @@ ul.sf-menu {
 ul.sf-menu li.sf-multicolumn-column {
   display: inline;
   float: left;
-  top:100%;
+  top: 100%;
 }
 
 li.sf-clone-parent a.sf-depth-1.menuparent.sf-with-ul {
   background: transparent;
   color: map-get($folwell-dark-palette, maroon);
   font-weight: 700;
-  margin-bottom: .45em;
+  margin-bottom: 0.45em;
   text-align: left;
   text-transform: uppercase;
 }
@@ -355,7 +358,7 @@ ol {
 .sf-multicolumn-column a.sf-depth-2.menuparent {
   color: map-get($folwell-dark-palette, maroon);
   font-weight: 700;
-  margin-bottom: -.6em;
+  margin-bottom: -0.6em;
 }
 
 li.sf-multicolumn-wrapper.sf-depth-1.menuparent {
@@ -523,7 +526,8 @@ ul.sf-menu.rtl {
   &.sf-horizontal.sf-shadow ul,
   &.sf-vertical.sf-shadow ul,
   &.sf-navbar.sf-shadow ul ul {
-    box-shadow: -2px 2px 10px transparentize(map-get($folwell-dark-palette, black), .5);
+    box-shadow: -2px 2px 10px
+      transparentize(map-get($folwell-dark-palette, black), 0.5);
   }
 
   &.sf-vertical {
